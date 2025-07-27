@@ -15,6 +15,11 @@ public class SceneLoader: MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
+    public void NextSceneWithDelay()
+    {
+        Invoke("NextScene", 1f);
+    }
+
     public void ReloadScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

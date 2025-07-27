@@ -20,20 +20,7 @@ public class ItemSwapper : MonoBehaviour
         {
             if (!activateOnViking)
             {
-                var screenPoint = Input.mousePosition;
-                var pos = Camera.main.ScreenToWorldPoint(screenPoint);
-                Vector2 v2pos = new Vector2(pos.x, pos.y);
-                
-                currentPar.transform.position = v2pos;
-                currentSprite.transform.position = v2pos;
-                if (Input.GetMouseButtonDown(0))
-                {
-                    currentPar.Play();
-                }
-                else if (Input.GetMouseButtonUp(0))
-                {
-                    currentPar.Stop();
-                }
+                ActivateTool();
                 //Put bucket png on cursor
             }
         }
@@ -54,6 +41,24 @@ public class ItemSwapper : MonoBehaviour
         {
             currentPar = Instantiate(particleSystem);
             currentSprite = Instantiate(itemSprite);
+        }
+    }
+
+    void ActivateTool()
+    {
+        var screenPoint = Input.mousePosition;
+        var pos = Camera.main.ScreenToWorldPoint(screenPoint);
+        Vector2 v2pos = new Vector2(pos.x, pos.y);
+
+        currentPar.transform.position = v2pos;
+        currentSprite.transform.position = v2pos;
+        if (Input.GetMouseButtonDown(0))
+        {
+            currentPar.Play();
+        }
+        else if (Input.GetMouseButtonUp(0))
+        {
+            currentPar.Stop();
         }
     }
 }
