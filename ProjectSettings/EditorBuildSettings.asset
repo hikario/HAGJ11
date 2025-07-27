@@ -9,6 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/00_MainMenu.unity
     guid: 85cbdc25ccf66c746823dcc536e8cc75
   - enabled: 1
+    path: Assets/Scenes/02_BathHouse.unity
+    guid: aa66a32c1bc67aa43847fbd24f6be819
+  - enabled: 1
+    path: Assets/Scenes/04_DressUp.unity
+    guid: 9a72baa9c28c1584bbaf66971da0316b
+  - enabled: 1
     path: Assets/Scenes/09_End Scene.unity
     guid: bb8e831bcdf755a489cfdf0fe4846c0d
   m_configObjects:
