@@ -49,9 +49,6 @@ public class Timer : MonoBehaviour
             }
             else
             {
-                Debug.Log("Time's up!");
-                timeRemaining = 0;
-                timerIsRunning = false;
                 EndBath();
             }
         }
@@ -68,6 +65,10 @@ public class Timer : MonoBehaviour
 
     public void EndBath()
     {
+        Debug.Log("Time's up!");
+        timeRemaining = 0;
+        UpdateTimerDisplay();
+        timerIsRunning = false;
         nextObject.GetComponent<ObjectTimerFlipper>().StartFlipper();
         buttonList.SendMessage("DisableButtons");
         buttonList.GetComponent<ItemSwapper>().isActive = false;
