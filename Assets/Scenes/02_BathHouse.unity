@@ -371,7 +371,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 31424589}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 31424591}
+        m_TargetAssemblyTypeName: ItemInfo, Assembly-CSharp
+        m_MethodName: ActivateItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &31424589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -422,9 +434,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99445c04b9611ac4082eb5fb7ebd0693, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particleSystem: {fileID: 0}
-  itemSprite: {fileID: 0}
-  itemSwapper: {fileID: 0}
+  particleSystem: {fileID: 8762936182592743773, guid: b34e38a02b1dca9418291ecd25c3e93e, type: 3}
+  itemSprite: {fileID: 9116261040093511778, guid: 92a9ed94070d5b44cb79b9582fac9bd2, type: 3}
+  itemSwapper: {fileID: 1231003346}
 --- !u!1 &146340842
 GameObject:
   m_ObjectHideFlags: 0
@@ -780,7 +792,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 426669907}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 426669909}
+        m_TargetAssemblyTypeName: ItemInfo, Assembly-CSharp
+        m_MethodName: ActivateItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &426669907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -831,9 +855,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99445c04b9611ac4082eb5fb7ebd0693, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particleSystem: {fileID: 0}
-  itemSprite: {fileID: 0}
-  itemSwapper: {fileID: 0}
+  particleSystem: {fileID: 8762936182592743773, guid: c1e30ae3d61d8204b9929628133243b9, type: 3}
+  itemSprite: {fileID: 2113976228512862384, guid: e958715b53b50d042ba194757b126e32, type: 3}
+  itemSwapper: {fileID: 1231003346}
 --- !u!1 &601991433
 GameObject:
   m_ObjectHideFlags: 0
@@ -917,7 +941,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 601991436}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 601991438}
+        m_TargetAssemblyTypeName: ItemInfo, Assembly-CSharp
+        m_MethodName: ActivateItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &601991436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -968,9 +1004,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99445c04b9611ac4082eb5fb7ebd0693, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particleSystem: {fileID: 0}
-  itemSprite: {fileID: 0}
-  itemSwapper: {fileID: 0}
+  particleSystem: {fileID: 8762936182592743773, guid: 70296dc69c3024049aa9e01e2684ef40, type: 3}
+  itemSprite: {fileID: 2660352944871890142, guid: da7937ad4c796e347a8fe9712bee4e54, type: 3}
+  itemSwapper: {fileID: 1231003346}
 --- !u!1 &719231549
 GameObject:
   m_ObjectHideFlags: 0
@@ -1028,7 +1064,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Bleach
+  m_text: Dye
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1608,7 +1644,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particleSystem: {fileID: 0}
   itemSprite: {fileID: 0}
-  itemSwapper: {fileID: 0}
+  itemSwapper: {fileID: 1231003346}
 --- !u!1 &950331728
 GameObject:
   m_ObjectHideFlags: 0
@@ -1872,7 +1908,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particleSystem: {fileID: 0}
   itemSprite: {fileID: 0}
+  currentPar: {fileID: 0}
+  currentSprite: {fileID: 0}
   isActive: 0
+  activateOnViking: 0
 --- !u!1 &1268247727
 GameObject:
   m_ObjectHideFlags: 0
@@ -1887,7 +1926,7 @@ GameObject:
   - component: {fileID: 1268247729}
   - component: {fileID: 1268247732}
   m_Layer: 5
-  m_Name: BleachButton
+  m_Name: DyeButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1956,7 +1995,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1268247730}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1268247732}
+        m_TargetAssemblyTypeName: ItemInfo, Assembly-CSharp
+        m_MethodName: ActivateItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1268247730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2007,9 +2058,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99445c04b9611ac4082eb5fb7ebd0693, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particleSystem: {fileID: 0}
-  itemSprite: {fileID: 0}
-  itemSwapper: {fileID: 0}
+  particleSystem: {fileID: 8762936182592743773, guid: fbb5c309c51523347b8d344765222ace, type: 3}
+  itemSprite: {fileID: 5344572973893877625, guid: 11da1213cfa387549baa70a0218dfda4, type: 3}
+  itemSwapper: {fileID: 1231003346}
 --- !u!1 &1283559261
 GameObject:
   m_ObjectHideFlags: 0
@@ -2404,6 +2455,7 @@ GameObject:
   - component: {fileID: 1820386631}
   - component: {fileID: 1820386633}
   - component: {fileID: 1820386632}
+  - component: {fileID: 1820386634}
   m_Layer: 5
   m_Name: Timer
   m_TagString: Untagged
@@ -2529,6 +2581,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1820386630}
   m_CullTransparentMesh: 1
+--- !u!114 &1820386634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1820386630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81363a594fbb71143be002ee77fb72a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeRemaining: 30
+  timerIsRunning: 0
+  timerText: {fileID: 1820386632}
 --- !u!1 &1826757570
 GameObject:
   m_ObjectHideFlags: 0

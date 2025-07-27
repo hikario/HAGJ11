@@ -4,11 +4,15 @@ using UnityEngine.EventSystems;
 
 public class ItemSwapper : MonoBehaviour
 {
+    // Make private later
     public ParticleSystem particleSystem;
-    public Sprite itemSprite;
+    public GameObject itemSprite;
+
+    public ParticleSystem currentPar;
+    public GameObject currentSprite;
 
     public bool isActive;
-    private bool activateOnViking;
+    public bool activateOnViking;
 
     void Update()
     {
@@ -18,17 +22,38 @@ public class ItemSwapper : MonoBehaviour
             {
                 var screenPoint = Input.mousePosition;
                 var pos = Camera.main.ScreenToWorldPoint(screenPoint);
-                particleSystem.transform.position = pos;
+                Vector2 v2pos = new Vector2(pos.x, pos.y);
+                
+                currentPar.transform.position = v2pos;
+                currentSprite.transform.position = v2pos;
                 if (Input.GetMouseButtonDown(0))
                 {
-                    particleSystem.Play();
+                    currentPar.Play();
                 }
                 else if (Input.GetMouseButtonUp(0))
                 {
-                    particleSystem.Stop();
+                    currentPar.Stop();
                 }
                 //Put bucket png on cursor
             }
+        }
+    }
+
+    public void SwapItem()
+    {
+        Debug.Log("Swapped!!!");
+        if (currentPar)
+        {
+            Destroy(currentPar.gameObject);
+        }
+        if (currentSprite)
+        {
+            Destroy(currentSprite);
+        }
+        if (isActive)
+        {
+            currentPar = Instantiate(particleSystem);
+            currentSprite = Instantiate(itemSprite);
         }
     }
 }
