@@ -11,6 +11,7 @@ public class Timer : MonoBehaviour
     public TextMeshProUGUI timerText; // Optional: Assign a UI Text element in the Inspector
     private string timerString;
     public float timerDelay = 3.5f;
+    public GameObject buttonList;
 
     [SerializeField]
     private GameObject nextObject;
@@ -18,6 +19,11 @@ public class Timer : MonoBehaviour
     void Start()
     {
         UpdateTimerDisplay();
+        if (buttonList == null)
+        {
+            buttonList = GameObject.Find("ActionButtons");
+        }
+        buttonList.SendMessage("DisableButtons");
     }
 
     public void TimerInvoke()
@@ -28,6 +34,7 @@ public class Timer : MonoBehaviour
     public void StartTimer()
     {
         timerIsRunning = true;
+        buttonList.SendMessage("EnableButtons");
     }
 
     void Update()
@@ -45,7 +52,7 @@ public class Timer : MonoBehaviour
                 Debug.Log("Time's up!");
                 timeRemaining = 0;
                 timerIsRunning = false;
-                nextObject.GetComponent<ObjectTimerFlipper>().StartFlipper();
+                EndBath();
             }
         }
     }
@@ -57,5 +64,13 @@ public class Timer : MonoBehaviour
 
         timerString = string.Format("{0:00}:{1:00}", minutes, seconds);
         timerText.text = timerString;
+    }
+
+    public void EndBath()
+    {
+        nextObject.GetComponent<ObjectTimerFlipper>().StartFlipper();
+        buttonList.SendMessage("DisableButtons");
+        buttonList.GetComponent<ItemSwapper>().isActive = false;
+        buttonList.GetComponent<ItemSwapper>().SwapItem();
     }
 }
