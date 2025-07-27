@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Collections.Generic;
+using UnityEngine.InputSystem;
 
 public class Timer : MonoBehaviour
 {
@@ -8,15 +10,23 @@ public class Timer : MonoBehaviour
     public bool timerIsRunning = false;
     public TextMeshProUGUI timerText; // Optional: Assign a UI Text element in the Inspector
     private string timerString;
+    public float timerDelay = 3.5f;
+
+    [SerializeField]
+    private GameObject nextObject;
 
     void Start()
     {
         UpdateTimerDisplay();
     }
 
+    public void TimerInvoke()
+    {
+        Invoke("StartTimer",timerDelay);
+    }
+
     public void StartTimer()
     {
-        // Start the timer
         timerIsRunning = true;
     }
 
@@ -35,6 +45,7 @@ public class Timer : MonoBehaviour
                 Debug.Log("Time's up!");
                 timeRemaining = 0;
                 timerIsRunning = false;
+                nextObject.GetComponent<ObjectTimerFlipper>().StartFlipper();
             }
         }
     }
