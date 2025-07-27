@@ -520,6 +520,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73768dcfbdb16794f817df0ccb329106, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  delay: 2
 --- !u!114 &92972175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -533,22 +534,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 92972172}
---- !u!1 &158389473 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 530206237480697948, guid: 80a883acbc2202d42a52b56b5f4d733e, type: 3}
-  m_PrefabInstance: {fileID: 186948964}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &158389475 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3680197812096720270, guid: 80a883acbc2202d42a52b56b5f4d733e, type: 3}
-  m_PrefabInstance: {fileID: 186948964}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 158389473}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d088037d4a2853849b4825b6bcac1f88, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &182070679
 GameObject:
   m_ObjectHideFlags: 0
@@ -559,6 +544,7 @@ GameObject:
   m_Component:
   - component: {fileID: 182070681}
   - component: {fileID: 182070680}
+  - component: {fileID: 182070682}
   m_Layer: 0
   m_Name: Audio Source
   m_TagString: Untagged
@@ -678,21 +664,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &186948964
+--- !u!114 &182070682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 182070679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f6fa109acb433e4093d0cd054015876, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1001 &247962118
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1674838741}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1767905600476101745, guid: 80a883acbc2202d42a52b56b5f4d733e, type: 3}
       propertyPath: m_Name
       value: FadeScreenCanvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 4478450011032887906, guid: 80a883acbc2202d42a52b56b5f4d733e, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5462001811289910738, guid: 80a883acbc2202d42a52b56b5f4d733e, type: 3}
       propertyPath: m_Pivot.x
@@ -1062,6 +1056,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 657101436}
   m_CullTransparentMesh: 1
+--- !u!114 &811467913 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3600687218853953866, guid: 80a883acbc2202d42a52b56b5f4d733e, type: 3}
+  m_PrefabInstance: {fileID: 247962118}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d088037d4a2853849b4825b6bcac1f88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &815165713
 GameObject:
   m_ObjectHideFlags: 0
@@ -1432,6 +1437,7 @@ GameObject:
   - component: {fileID: 923515523}
   - component: {fileID: 923515522}
   - component: {fileID: 923515521}
+  - component: {fileID: 923515524}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1513,6 +1519,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &923515524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 923515520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
+  m_TaaSettings:
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
 --- !u!1 &964302183
 GameObject:
   m_ObjectHideFlags: 0
@@ -1856,11 +1906,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!224 &1109494691 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 5462001811289910738, guid: 80a883acbc2202d42a52b56b5f4d733e, type: 3}
-  m_PrefabInstance: {fileID: 186948964}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1178927929
 GameObject:
   m_ObjectHideFlags: 0
@@ -2372,19 +2417,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 158389473}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 158389475}
+      - m_Target: {fileID: 811467913}
         m_TargetAssemblyTypeName: SceneFader, Assembly-CSharp
         m_MethodName: RunFade
         m_Mode: 1
@@ -2478,7 +2511,6 @@ Transform:
   - {fileID: 92972173}
   - {fileID: 4590334432499248799}
   - {fileID: 992315211}
-  - {fileID: 1109494691}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1808912705
@@ -2990,3 +3022,4 @@ SceneRoots:
   - {fileID: 994156864}
   - {fileID: 182070681}
   - {fileID: 1674838741}
+  - {fileID: 247962118}

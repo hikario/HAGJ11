@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader: MonoBehaviour
 {
+    public float delay;
+
     public void LoadMainMenuScene()
     {
         SceneManager.LoadScene("00_MainMenu");
@@ -17,7 +19,7 @@ public class SceneLoader: MonoBehaviour
 
     public void NextSceneWithDelay()
     {
-        Invoke("NextScene", 1f);
+        Invoke("NextScene", delay);
     }
 
     public void ReloadScene()

@@ -12,6 +12,7 @@ public class Timer : MonoBehaviour
     private string timerString;
     public float timerDelay = 3.5f;
     public GameObject buttonList;
+    public GameObject fadeScreenCanvas;
 
     [SerializeField]
     private GameObject nextObject;
@@ -73,5 +74,9 @@ public class Timer : MonoBehaviour
         buttonList.SendMessage("DisableButtons");
         buttonList.GetComponent<ItemSwapper>().isActive = false;
         buttonList.GetComponent<ItemSwapper>().SwapItem();
+        if (fadeScreenCanvas != null)
+        {
+            fadeScreenCanvas.GetComponent<SceneFader>().RunFade();
+        }
     }
 }

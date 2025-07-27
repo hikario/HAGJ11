@@ -56,6 +56,7 @@ public class SceneFader : MonoBehaviour
 
     public void RunFade()
     {
+        fadeOutUIImage.gameObject.SetActive(true);
         StartCoroutine(Fade(fadeDirection));
     }
 
