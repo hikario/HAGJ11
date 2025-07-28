@@ -613,7 +613,7 @@ PlayerSettings:
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
   metroPackageName: HAGJ11
-  metroPackageVersion: 
+  metroPackageVersion: 1.0.0.0
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
@@ -621,7 +621,7 @@ PlayerSettings:
   metroCertificateNotAfter: 0000000000000000
   metroApplicationDescription: HAGJ11
   wsaImages: {}
-  metroTileShortName: 
+  metroTileShortName: HAGJ11
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0

@@ -13,6 +13,7 @@ public class ItemInfo : MonoBehaviour
     {
         itemSwapper.GetComponent<ItemSwapper>().isActive = false;
         itemSwapper.GetComponent<ItemSwapper>().SwapItem();
+        itemSwapper.GetComponent<ItemSwapper>().SetCurrentGameObject(null);
     }
 
     public void ActivateItem()
@@ -21,5 +22,6 @@ public class ItemInfo : MonoBehaviour
         itemSwapper.GetComponent<ItemSwapper>().particleSystem = particleSystem;
         itemSwapper.GetComponent<ItemSwapper>().itemSprite = itemSprite;
         itemSwapper.GetComponent<ItemSwapper>().SwapItem();
+        itemSwapper.GetComponent<ItemSwapper>().SetCurrentGameObject(gameObject);
     }
 }

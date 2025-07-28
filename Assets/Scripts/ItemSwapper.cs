@@ -7,21 +7,36 @@ public class ItemSwapper : MonoBehaviour
     // Make private later
     public ParticleSystem particleSystem;
     public GameObject itemSprite;
+    private GameObject currentItem;
 
     public ParticleSystem currentPar;
     public GameObject currentSprite;
 
     public bool isActive;
-    public bool activateOnViking;
+    private bool onViking;
+    private GameObject cleanlinessTracker;
+    private bool isWash;
+
+    void Start()
+    {
+        cleanlinessTracker = GameObject.Find("CleanlinessTracker");
+    }
 
     void Update()
     {
         if (isActive)
         {
-            if (!activateOnViking)
+            ActivateTool();
+            if (onViking == true)
             {
-                ActivateTool();
-                //Put bucket png on cursor
+                if (isWash)
+                {
+                    cleanlinessTracker.GetComponent<CleanlinessTracker>().Wash();
+                }
+                else
+                {
+                    cleanlinessTracker.GetComponent<CleanlinessTracker>().Dye();
+                }
             }
         }
     }
@@ -55,10 +70,44 @@ public class ItemSwapper : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             currentPar.Play();
+            cleanlinessTracker.GetComponent<CleanlinessTracker>().StartWashTimer();
         }
         else if (Input.GetMouseButtonUp(0))
         {
             currentPar.Stop();
+            cleanlinessTracker.GetComponent<CleanlinessTracker>().StopWashTimer();
         }
+    }
+
+    public void IsHovering()
+    {
+        onViking = true;
+    }
+
+    public void NotHovering()
+    {
+        onViking = false;
+    }
+
+    public void SetCurrentGameObject(GameObject curItem)
+    {
+        if (curItem == null)
+        {
+            currentItem = null;
+        }
+        else
+        {
+            currentItem = curItem;
+        }
+    }
+
+    public void ActivateIsWash()
+    {
+        isWash = true;
+    }
+
+    public void DeactivateIsWash()
+    {
+        isWash = false;
     }
 }
