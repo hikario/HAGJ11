@@ -1,16 +1,45 @@
 using UnityEngine;
+using System.Collections;
+using TMPro;
 
 public class ObjectTimerFlipper : MonoBehaviour
 {
     [SerializeField]
     private GameObject nextObject;
     public bool turnOff;
+    public bool startFlipper;
+    public bool FinalFlip;
+    [SerializeField] private TextMeshProUGUI textToUse;
+    [SerializeField] private bool fadeIn = false;
+    private float timeMultiplier;
+    public float textHangTime;
+
+    [SerializeField]
+    private GameObject sceneLoader;
+    [SerializeField]
+    private GameObject fadeScreenCanvas;
 
     public float delay;
 
+
+    void Start()
+    {
+        if (startFlipper)
+        {
+            StartFlipper();
+        }
+    }
+
     public void StartFlipper()
     {
-        Invoke("FlipObjects", delay);
+        if (fadeIn)
+        {
+            StartCoroutine(IntroFade(textToUse));
+        }
+        else
+        {
+            Invoke("FlipObjects", delay);
+        }
     }
 
     public void FlipObjects()
@@ -25,5 +54,60 @@ public class ObjectTimerFlipper : MonoBehaviour
         {
             gameObject.SetActive(false);
         }
+    }
+
+    private IEnumerator IntroFade(TextMeshProUGUI textToUse)
+    {
+        yield return StartCoroutine(FadeInText(1f, textToUse));
+        yield return new WaitForSeconds(textHangTime);
+        yield return StartCoroutine(FadeOutText(1f, textToUse));
+        if (FinalFlip)
+        {
+            if (fadeScreenCanvas != null && sceneLoader != null)
+            {
+                sceneLoader.GetComponent<SceneLoader>().NextSceneWithDelay();
+                fadeScreenCanvas.GetComponent<SceneFader>().RunFade();
+            }
+        }
+        else
+        {
+            Invoke("FlipObjects", delay);
+        }
+        //End of transition, do some extra stuff!!
+    }
+
+    private IEnumerator FadeInText(float timeSpeed, TextMeshProUGUI text)
+    {
+        text.color = new Color(text.color.r, text.color.g, text.color.b, 0);
+        while (text.color.a < 1.0f)
+        {
+            text.color = new Color(text.color.r, text.color.g, text.color.b, text.color.a + (Time.deltaTime * timeSpeed));
+            yield return null;
+        }
+    }
+    private IEnumerator FadeOutText(float timeSpeed, TextMeshProUGUI text)
+    {
+        text.color = new Color(text.color.r, text.color.g, text.color.b, 1);
+        while (text.color.a > 0.0f)
+        {
+            text.color = new Color(text.color.r, text.color.g, text.color.b, text.color.a - (Time.deltaTime * timeSpeed));
+            yield return null;
+        }
+    }
+    public void FadeInText(float timeSpeed = -1.0f)
+    {
+        if (timeSpeed <= 0.0f)
+        {
+            timeSpeed = timeMultiplier;
+        }
+        StartCoroutine(FadeInText(timeSpeed, textToUse));
+    }
+    public void FadeOutText(float timeSpeed = -1.0f)
+    {
+        if (timeSpeed <= 0.0f)
+        {
+            timeSpeed = timeMultiplier;
+        }
+        StartCoroutine(FadeOutText(timeSpeed, textToUse));
     }
 }
