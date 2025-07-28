@@ -28,13 +28,16 @@ public class CleanlinessTracker : MonoBehaviour
 
     private float curClean;
 
+    private GameObject starScore;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         currentCleanlinessLevel = max;
         currentHairColor = beginningHairColor;
         timer = false;
-        curClean = 1;
+        curClean = 0;
+        starScore = GameObject.Find("StarScore");
     }
 
     void Update()
@@ -80,14 +83,20 @@ public class CleanlinessTracker : MonoBehaviour
     // Determine cleanlevel for stars
     void CleanLevel()
     {
-        cleanLevel1 = max / 3;
+        cleanLevel1 = max / 4;
         cleanLevel2 = cleanLevel1 * 2;
-        cleanLevel3 = max;
+        cleanLevel3 = cleanLevel1 * 3;
+        starScore.GetComponent<StarScore>().StarLevel(curClean);
+
+        if (currentCleanlinessLevel >= cleanLevel2 && currentCleanlinessLevel < cleanLevel3)
+        {
+            curClean = 1;
+        }
         if (currentCleanlinessLevel >= cleanLevel1 && currentCleanlinessLevel < cleanLevel2)
         {
             curClean = 2;
         }
-        if (Mathf.RoundToInt(currentCleanlinessLevel) == 33)
+        if (Mathf.RoundToInt(currentCleanlinessLevel) == (Mathf.RoundToInt(cleanLevel1)))
         {
             curClean = 3;
             SetSparkle();
