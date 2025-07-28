@@ -16,10 +16,12 @@ public class ItemSwapper : MonoBehaviour
     private bool onViking;
     private GameObject cleanlinessTracker;
     private bool isWash;
+    private bool isClicking;
 
     void Start()
     {
         cleanlinessTracker = GameObject.Find("CleanlinessTracker");
+        isClicking = false;
     }
 
     void Update()
@@ -27,15 +29,18 @@ public class ItemSwapper : MonoBehaviour
         if (isActive)
         {
             ActivateTool();
-            if (onViking == true)
+            if(onViking == true)
             {
-                if (isWash)
+                if (isClicking == true)
                 {
-                    cleanlinessTracker.GetComponent<CleanlinessTracker>().Wash();
-                }
-                else
-                {
-                    cleanlinessTracker.GetComponent<CleanlinessTracker>().Dye();
+                    if (isWash)
+                    {
+                        cleanlinessTracker.GetComponent<CleanlinessTracker>().Wash();
+                    }
+                    else
+                    {
+                        cleanlinessTracker.GetComponent<CleanlinessTracker>().Dye();
+                    }
                 }
             }
         }
@@ -70,25 +75,24 @@ public class ItemSwapper : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             currentPar.Play();
-            cleanlinessTracker.GetComponent<CleanlinessTracker>().StartWashTimer();
+            isClicking = true;
+            cleanlinessTracker.GetComponent<CleanlinessTracker>().StartWashTimer(true);
         }
         else if (Input.GetMouseButtonUp(0))
         {
             currentPar.Stop();
-            cleanlinessTracker.GetComponent<CleanlinessTracker>().StopWashTimer();
+            isClicking = false;
+            cleanlinessTracker.GetComponent<CleanlinessTracker>().StartWashTimer(false);
         }
     }
 
-    public void IsHovering()
+    // Info from VikingHoverSensor.cs
+    public void IsHovering(bool hovering)
     {
-        onViking = true;
+        onViking = hovering;
     }
 
-    public void NotHovering()
-    {
-        onViking = false;
-    }
-
+    // Setting which item was generated
     public void SetCurrentGameObject(GameObject curItem)
     {
         if (curItem == null)
@@ -101,13 +105,9 @@ public class ItemSwapper : MonoBehaviour
         }
     }
 
-    public void ActivateIsWash()
+    // coded for bath item buttons to know if they are wash or dye
+    public void ActivateIsWash(bool wash)
     {
-        isWash = true;
-    }
-
-    public void DeactivateIsWash()
-    {
-        isWash = false;
+        isWash = wash;
     }
 }

@@ -8,11 +8,11 @@ public class VikingHoverSensor : MonoBehaviour
     void OnMouseEnter()
     {
         Debug.Log("hovering");
-        itemSwapper.GetComponent<ItemSwapper>().IsHovering();
+        itemSwapper.GetComponent<ItemSwapper>().IsHovering(true);
     }
     void OnMouseExit()
     {
         Debug.Log("not hovering");
-        itemSwapper.GetComponent<ItemSwapper>().NotHovering();
+        itemSwapper.GetComponent<ItemSwapper>().IsHovering(false);
     }
 }

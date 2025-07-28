@@ -2,22 +2,31 @@ using UnityEngine;
 
 public class CleanlinessTracker : MonoBehaviour
 {
-    #region Cleanliness
+    #region CleanlinessVars
     public float max = 30;
     public float cleanTickAmount = 0.01f;
     public float currentCleanlinessLevel;
     #endregion
 
-    #region Dye
+    #region DyeVars
     public Vector3 beginningHairColor;
     public Vector3 currentHairColor;
     public Vector3 dyeTickAmount;
     #endregion
 
-    private bool timer;
-    private float tTime;
-    private bool isWash = false;
+    #region VFXVars
+    [SerializeField]
+    public ParticleSystem sparkleParticles;
+    #endregion
 
+    private bool timer;
+    private int tTime;
+
+    private float cleanLevel1;
+    private float cleanLevel2;
+    private float cleanLevel3;
+
+    private float curClean;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -25,13 +34,36 @@ public class CleanlinessTracker : MonoBehaviour
         currentCleanlinessLevel = max;
         currentHairColor = beginningHairColor;
         timer = false;
+        curClean = 1;
     }
 
     void Update()
     {
+        CleanLevel();
+        WashTimer();
+    }
+
+    public void Wash()
+    {
+        if (currentCleanlinessLevel > 0)
+        {
+            currentCleanlinessLevel = currentCleanlinessLevel - cleanTickAmount;
+        }
+    }
+
+    public void Dye()
+    {
+        if (currentHairColor.x < 255)
+        {
+            currentHairColor = currentHairColor + dyeTickAmount;
+        }
+    }
+
+    void WashTimer()
+    {
         if (timer)
         {
-            tTime += Time.deltaTime;
+            tTime += Mathf.RoundToInt(Time.deltaTime);
         }
         else
         {
@@ -40,40 +72,32 @@ public class CleanlinessTracker : MonoBehaviour
         // Debug.Log(tTime);
     }
 
-    public void Wash()
+    public void StartWashTimer(bool run)
     {
-        Debug.Log("is washing!!!");
-        if (currentCleanlinessLevel > 0)
+        timer = run;
+    }
+
+    // Determine cleanlevel for stars
+    void CleanLevel()
+    {
+        cleanLevel1 = max / 3;
+        cleanLevel2 = cleanLevel1 * 2;
+        cleanLevel3 = max;
+        if (currentCleanlinessLevel >= cleanLevel1 && currentCleanlinessLevel < cleanLevel2)
         {
-            currentCleanlinessLevel = currentCleanlinessLevel - (cleanTickAmount * tTime);
+            curClean = 2;
+        }
+        if (Mathf.RoundToInt(currentCleanlinessLevel) == 33)
+        {
+            curClean = 3;
+            SetSparkle();
         }
     }
 
-    public void Dye()
+    // Set Sparkle when curClean = 3
+    void SetSparkle()
     {
-        if (currentHairColor.x < 255)
-        {
-            currentHairColor = currentHairColor + (dyeTickAmount * tTime);
-        }
-    }
-
-    public void StartWashTimer()
-    {
-        timer = true;
-    }
-    
-    public void StopWashTimer()
-    {
-        timer = false;
-    }
-
-    public void ActivateIsWash()
-    {
-        isWash = true;
-    }
-
-    public void DeactivateIsWash()
-    {
-        isWash = false;
+        Debug.Log("setting sparkle!!!!");
+        sparkleParticles.Play();
     }
 }
