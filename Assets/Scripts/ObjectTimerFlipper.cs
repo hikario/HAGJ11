@@ -59,8 +59,11 @@ public class ObjectTimerFlipper : MonoBehaviour
     private IEnumerator IntroFade(TextMeshProUGUI textToUse)
     {
         yield return StartCoroutine(FadeInText(1f, textToUse));
-        yield return new WaitForSeconds(textHangTime);
-        yield return StartCoroutine(FadeOutText(1f, textToUse));
+        if (turnOff)
+        {
+            yield return new WaitForSeconds(textHangTime);
+            yield return StartCoroutine(FadeOutText(1f, textToUse));
+        }
         if (FinalFlip)
         {
             if (fadeScreenCanvas != null && sceneLoader != null)

@@ -955,9 +955,9 @@ MonoBehaviour:
   turnOff: 0
   startFlipper: 0
   FinalFlip: 0
-  textToUse: {fileID: 0}
-  fadeIn: 0
-  textHangTime: 0
+  textToUse: {fileID: 323461320}
+  fadeIn: 1
+  textHangTime: 1
   sceneLoader: {fileID: 0}
   fadeScreenCanvas: {fileID: 0}
   delay: 5
@@ -2498,11 +2498,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextObject: {fileID: 323461317}
   turnOff: 1
-  startFlipper: 0
+  startFlipper: 1
   FinalFlip: 0
-  textToUse: {fileID: 0}
-  fadeIn: 0
-  textHangTime: 0
+  textToUse: {fileID: 890959545}
+  fadeIn: 1
+  textHangTime: 0.5
   sceneLoader: {fileID: 0}
   fadeScreenCanvas: {fileID: 0}
   delay: 2
