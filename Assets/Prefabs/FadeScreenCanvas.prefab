@@ -194,6 +194,7 @@ MonoBehaviour:
   fadeOutUIImage: {fileID: 1511178914751593590}
   fadeSpeed: 1
   fadeDirection: 0
+  fadeOnStart: 0
 --- !u!1 &4478450011032887906
 GameObject:
   m_ObjectHideFlags: 0
@@ -285,3 +286,4 @@ MonoBehaviour:
   fadeOutUIImage: {fileID: 820556701011445474}
   fadeSpeed: 1
   fadeDirection: 1
+  fadeOnStart: 1
