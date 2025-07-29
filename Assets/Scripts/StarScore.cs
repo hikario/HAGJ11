@@ -3,9 +3,10 @@ using UnityEngine;
 public class StarScore : MonoBehaviour
 {
     private int stars;
-    private GameObject star1;
-    private GameObject star2;
-    private GameObject star3;
+    public GameObject star1;
+    public GameObject star2;
+    public GameObject star3;
+    public GameObject results;
 
     void Start()
     {
@@ -21,19 +22,22 @@ public class StarScore : MonoBehaviour
     {
         if (stars == 0)
         {
-
+            results.GetComponent<ObjectTimerFlipper>().RemoveNext();
+            results.GetComponent<ObjectTimerFlipper>().MakeFinalFlip();
         }
         if (stars == 1)
         {
-
+            star1.GetComponent<ObjectTimerFlipper>().RemoveNext();
+            star1.GetComponent<ObjectTimerFlipper>().MakeFinalFlip();
         }
         if (stars == 2)
         {
-
+            star2.GetComponent<ObjectTimerFlipper>().RemoveNext();
+            star2.GetComponent<ObjectTimerFlipper>().MakeFinalFlip();
         }
         if (stars == 3)
         {
-
+            star3.GetComponent<ObjectTimerFlipper>().MakeFinalFlip();
         }
     }
 }

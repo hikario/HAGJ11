@@ -8,7 +8,7 @@ public class ObjectTimerFlipper : MonoBehaviour
     private GameObject nextObject;
     public bool turnOff;
     public bool startFlipper;
-    public bool FinalFlip;
+    public bool finalFlip;
     [SerializeField] private TextMeshProUGUI textToUse;
     [SerializeField] private bool fadeIn = false;
     private float timeMultiplier;
@@ -48,11 +48,21 @@ public class ObjectTimerFlipper : MonoBehaviour
         {
             nextObject.SetActive(true);
             nextObject.GetComponent<ObjectTimerFlipper>().StartFlipper();
-            Debug.Log("Fwip!!!!");
+            // Debug.Log("Fwip!!!!");
         }
         if (turnOff)
         {
             gameObject.SetActive(false);
+        }
+        if (finalFlip)
+        {
+            Debug.Log("Final fwip!!!!");
+            if (fadeScreenCanvas != null && sceneLoader != null)
+            {
+                Debug.Log("Loading next scene!!!!");
+                sceneLoader.GetComponent<SceneLoader>().NextSceneWithDelay();
+                fadeScreenCanvas.GetComponent<SceneFader>().RunFade();
+            }
         }
     }
 
@@ -64,10 +74,12 @@ public class ObjectTimerFlipper : MonoBehaviour
             yield return new WaitForSeconds(textHangTime);
             yield return StartCoroutine(FadeOutText(1f, textToUse));
         }
-        if (FinalFlip)
+        if (finalFlip)
         {
+            Debug.Log("Final fwip!!!!");
             if (fadeScreenCanvas != null && sceneLoader != null)
             {
+                Debug.Log("Loading next scene!!!!");
                 sceneLoader.GetComponent<SceneLoader>().NextSceneWithDelay();
                 fadeScreenCanvas.GetComponent<SceneFader>().RunFade();
             }
@@ -112,5 +124,15 @@ public class ObjectTimerFlipper : MonoBehaviour
             timeSpeed = timeMultiplier;
         }
         StartCoroutine(FadeOutText(timeSpeed, textToUse));
+    }
+
+    public void RemoveNext()
+    {
+        nextObject = null;
+    }
+
+    public void MakeFinalFlip()
+    {
+        finalFlip = true;
     }
 }
