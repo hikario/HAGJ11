@@ -47,7 +47,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _Bright_Power: 0
-    - _Color_Density: 10
+    - _Color_Density: 5
     - _Color_Intensity: 1
     - _QueueControl: 0
     - _QueueOffset: 0
