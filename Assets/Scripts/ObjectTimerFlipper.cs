@@ -131,6 +131,11 @@ public class ObjectTimerFlipper : MonoBehaviour
         nextObject = null;
     }
 
+    public void AddNext(GameObject nextGO)
+    {
+        nextObject = nextGO;
+    }
+
     public void MakeFinalFlip()
     {
         finalFlip = true;

@@ -9,6 +9,8 @@ public class ItemInfo : MonoBehaviour
     [SerializeField]
     private GameObject itemSwapper;
 
+    public bool dye;
+
     public void DeactivateItem()
     {
         itemSwapper.GetComponent<ItemSwapper>().isActive = false;
@@ -23,5 +25,6 @@ public class ItemInfo : MonoBehaviour
         itemSwapper.GetComponent<ItemSwapper>().itemSprite = itemSprite;
         itemSwapper.GetComponent<ItemSwapper>().SwapItem();
         itemSwapper.GetComponent<ItemSwapper>().SetCurrentGameObject(gameObject);
+        itemSwapper.GetComponent<ItemSwapper>().SetDye(dye);
     }
 }

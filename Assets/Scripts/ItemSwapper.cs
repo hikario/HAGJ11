@@ -17,6 +17,7 @@ public class ItemSwapper : MonoBehaviour
     private GameObject cleanlinessTracker;
     private bool isWash;
     private bool isClicking;
+    private bool dye;
 
     void Start()
     {
@@ -39,7 +40,7 @@ public class ItemSwapper : MonoBehaviour
                     }
                     else
                     {
-                        cleanlinessTracker.GetComponent<CleanlinessTracker>().Dye();
+                        cleanlinessTracker.GetComponent<CleanlinessTracker>().Dye(dye);
                     }
                 }
             }
@@ -109,5 +110,10 @@ public class ItemSwapper : MonoBehaviour
     public void ActivateIsWash(bool wash)
     {
         isWash = wash;
+    }
+
+    public void SetDye(bool isDye)
+    {
+        dye = isDye;
     }
 }

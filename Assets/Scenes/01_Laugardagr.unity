@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 41257555}
   - component: {fileID: 41257554}
   - component: {fileID: 41257553}
+  - component: {fileID: 41257556}
   m_Layer: 0
   m_Name: Laugardagr
   m_TagString: Untagged
@@ -172,7 +173,7 @@ MonoBehaviour:
   nextObject: {fileID: 1014852879}
   turnOff: 1
   startFlipper: 1
-  FinalFlip: 0
+  finalFlip: 0
   textToUse: {fileID: 41257554}
   fadeIn: 1
   textHangTime: 2
@@ -279,6 +280,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 41257551}
   m_CullTransparentMesh: 1
+--- !u!114 &41257556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 41257551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa0bf50d553a9794a9ff455538df7f25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueText: {fileID: 41257554}
 --- !u!1 &143662562
 GameObject:
   m_ObjectHideFlags: 0
@@ -511,7 +525,7 @@ MonoBehaviour:
   nextObject: {fileID: 1857020851}
   turnOff: 1
   startFlipper: 0
-  FinalFlip: 0
+  finalFlip: 0
   textToUse: {fileID: 431441214}
   fadeIn: 1
   textHangTime: 5
@@ -1022,7 +1036,7 @@ MonoBehaviour:
   nextObject: {fileID: 431441211}
   turnOff: 1
   startFlipper: 0
-  FinalFlip: 0
+  finalFlip: 0
   textToUse: {fileID: 1014852882}
   fadeIn: 1
   textHangTime: 2
@@ -1416,7 +1430,7 @@ MonoBehaviour:
   nextObject: {fileID: 0}
   turnOff: 1
   startFlipper: 0
-  FinalFlip: 1
+  finalFlip: 0
   textToUse: {fileID: 1857020854}
   fadeIn: 1
   textHangTime: 2

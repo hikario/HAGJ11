@@ -30,6 +30,8 @@ public class CleanlinessTracker : MonoBehaviour
 
     private GameObject starScore;
 
+    private bool hairdye;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -54,11 +56,22 @@ public class CleanlinessTracker : MonoBehaviour
         }
     }
 
-    public void Dye()
+    public void Dye(bool isDye)
     {
-        if (currentHairColor.x < 255)
+        hairdye = isDye;
+        if (!isDye)
         {
-            currentHairColor = currentHairColor + dyeTickAmount;
+            if (currentHairColor.x > 0)
+            {
+                currentHairColor = currentHairColor - dyeTickAmount;
+            }
+        }
+        else
+        {
+            if (currentHairColor.x < 255)
+            {
+                currentHairColor = currentHairColor + dyeTickAmount;
+            }
         }
     }
 

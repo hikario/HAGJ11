@@ -34,7 +34,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -458, y: -183}
+  m_AnchoredPosition: {x: -458, y: -199.16}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6575412201385364037
@@ -187,7 +187,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 121, y: -183}
+  m_AnchoredPosition: {x: 121, y: -199.16}
   m_SizeDelta: {x: 800, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4621403073251179271
@@ -514,6 +514,7 @@ GameObject:
   - component: {fileID: 8977860366644900265}
   - component: {fileID: 3571736219025823625}
   - component: {fileID: 1484012592922824340}
+  - component: {fileID: 2054063437650820475}
   m_Layer: 5
   m_Name: MimirCanvas
   m_TagString: Untagged
@@ -605,3 +606,22 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &2054063437650820475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8013740244879753396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97457540e07f6644989f3593c6714fff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textDisplay: {fileID: 3151180490695991691}
+  goodText: Well done!
+  midText: Good enough.
+  badText: Try again...
+  typingSpeed: 0.1
+  starScore: {fileID: 0}
+  starAmt: 0
