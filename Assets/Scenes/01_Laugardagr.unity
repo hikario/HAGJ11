@@ -552,12 +552,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '"The Danes made themselves too acceptable to English women by their elegant
+  m_text: "\"The Danes made themselves too acceptable to English women by their elegant
     manners and their care of their person. They combed their hair every day, bathed
     every Saturday, and even changed their garments often. They set off their persons
     by many such frivolous devices. In this manner, they laid siege to the virtue
     of the married women and persuaded the daughters, even of the nobles, to be their
-    concubines."'
+    concubines.\"\n\n-John of Wallingford\u2019s Chronicle, 1220"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1063,8 +1063,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: For the vikings, bathing, grooming, and self hygiene were important parts
-    of daily life.
+  m_text: "For the vikings, bathing, grooming, and self hygiene were important parts
+    of daily life. \n\nThey valued cleanliness, and it was socially crucial to keep
+    yourself well-dressed and clean when attending social events."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1430,7 +1431,7 @@ MonoBehaviour:
   nextObject: {fileID: 0}
   turnOff: 1
   startFlipper: 0
-  finalFlip: 0
+  finalFlip: 1
   textToUse: {fileID: 1857020854}
   fadeIn: 1
   textHangTime: 2
