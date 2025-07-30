@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 
 public class ItemSwapper : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class ItemSwapper : MonoBehaviour
     private bool isWash;
     private bool isClicking;
     private bool dye;
+
+    public Vector3 sp;
 
     void Start()
     {
@@ -67,12 +70,13 @@ public class ItemSwapper : MonoBehaviour
 
     void ActivateTool()
     {
-        var screenPoint = Input.mousePosition;
-        var pos = Camera.main.ScreenToWorldPoint(screenPoint);
-        Vector2 v2pos = new Vector2(pos.x, pos.y);
+        var screenPoint = Mouse.current.position.ReadValue();
+        sp = screenPoint;
+        sp.z = Camera.main.nearClipPlane + 10;
+        var pos = Camera.main.ScreenToWorldPoint(sp);
 
-        currentPar.transform.position = v2pos;
-        currentSprite.transform.position = v2pos;
+        currentPar.transform.position = pos;
+        currentSprite.transform.position = pos;
         if (Input.GetMouseButtonDown(0))
         {
             currentPar.Play();
