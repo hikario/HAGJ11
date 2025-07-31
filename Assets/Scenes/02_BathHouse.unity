@@ -1075,8 +1075,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: How to Bathe
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b4d6d0e7f6a49f34dab76efa7c8dcb74, type: 2}
+  m_sharedMaterial: {fileID: 8790956909468634971, guid: b4d6d0e7f6a49f34dab76efa7c8dcb74, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3563,7 +3563,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9191937189054257683, guid: 8115d8ae1408f364681d36412a26b28c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 299.99997
+      value: 239
       objectReference: {fileID: 0}
     - target: {fileID: 9191937189054257683, guid: 8115d8ae1408f364681d36412a26b28c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4038,7 +4038,7 @@ Transform:
   m_GameObject: {fileID: 950331728}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.4, z: 0}
+  m_LocalPosition: {x: 0, y: 0.4, z: -1.5}
   m_LocalScale: {x: 6, y: 8.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4514,8 +4514,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 580b894643e68d74199b48180027338a, type: 2}
+  m_sharedMaterial: {fileID: -3899448264815451229, guid: 580b894643e68d74199b48180027338a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7096,8 +7096,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Start Laug
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 580b894643e68d74199b48180027338a, type: 2}
+  m_sharedMaterial: {fileID: -3899448264815451229, guid: 580b894643e68d74199b48180027338a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
