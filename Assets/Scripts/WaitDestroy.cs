@@ -9,6 +9,7 @@ public class WaitDestroy : MonoBehaviour
     public VideoPlayer thisVideo;
     public VideoPlayer nextVideo;
     public float frameCount;
+    public bool doNotDestroy;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -20,8 +21,10 @@ public class WaitDestroy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        StartCoroutine(Frames());
-            
+        if (!doNotDestroy)
+        {
+            StartCoroutine(Frames());
+        }   
     }
 
     public void EnableChildren()
@@ -46,7 +49,7 @@ public class WaitDestroy : MonoBehaviour
         yield return new WaitForSeconds(frameCount);
         Debug.Log("framecountUP!!!!");
         nextVideoObject.SetActive(true);
-        EnableChildren();
+        // EnableChildren();
         DestroyVideoGO();
     }
 
