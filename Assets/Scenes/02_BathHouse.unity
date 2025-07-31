@@ -492,7 +492,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particleSystem: {fileID: 8762936182592743773, guid: b34e38a02b1dca9418291ecd25c3e93e, type: 3}
-  itemSprite: {fileID: 2660352944871890142, guid: da7937ad4c796e347a8fe9712bee4e54, type: 3}
+  itemSprite: {fileID: 9116261040093511778, guid: 92a9ed94070d5b44cb79b9582fac9bd2, type: 3}
   itemSwapper: {fileID: 1231003346}
   dye: 0
 --- !u!1 &35224956
