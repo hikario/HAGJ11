@@ -726,8 +726,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: End Bath
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b4d6d0e7f6a49f34dab76efa7c8dcb74, type: 2}
+  m_sharedMaterial: {fileID: 8790956909468634971, guid: b4d6d0e7f6a49f34dab76efa7c8dcb74, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -844,8 +844,24 @@ PrefabInstance:
       value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 3151180490695991691, guid: 8115d8ae1408f364681d36412a26b28c, type: 3}
+      propertyPath: m_margin.w
+      value: 11.416412
+      objectReference: {fileID: 0}
+    - target: {fileID: 3151180490695991691, guid: 8115d8ae1408f364681d36412a26b28c, type: 3}
+      propertyPath: m_margin.x
+      value: 175.75192
+      objectReference: {fileID: 0}
+    - target: {fileID: 3151180490695991691, guid: 8115d8ae1408f364681d36412a26b28c, type: 3}
+      propertyPath: m_margin.z
+      value: 193.77893
+      objectReference: {fileID: 0}
+    - target: {fileID: 3151180490695991691, guid: 8115d8ae1408f364681d36412a26b28c, type: 3}
       propertyPath: m_fontSizeBase
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3151180490695991691, guid: 8115d8ae1408f364681d36412a26b28c, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3571736219025823625, guid: 8115d8ae1408f364681d36412a26b28c, type: 3}
       propertyPath: m_UiScaleMode
@@ -861,7 +877,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4735464122089158052, guid: 8115d8ae1408f364681d36412a26b28c, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 155.5
       objectReference: {fileID: 0}
     - target: {fileID: 4735464122089158052, guid: 8115d8ae1408f364681d36412a26b28c, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -869,7 +885,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4735464122089158052, guid: 8115d8ae1408f364681d36412a26b28c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -142
+      value: -140
       objectReference: {fileID: 0}
     - target: {fileID: 6423494852402763163, guid: 8115d8ae1408f364681d36412a26b28c, type: 3}
       propertyPath: m_fontSize
@@ -913,7 +929,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9151941488973513497, guid: 8115d8ae1408f364681d36412a26b28c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 44
+      value: 69
       objectReference: {fileID: 0}
     - target: {fileID: 9191937189054257683, guid: 8115d8ae1408f364681d36412a26b28c, type: 3}
       propertyPath: m_Pivot.x
@@ -1050,7 +1066,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 234.82}
+  m_AnchoredPosition: {x: 0, y: 245.56}
   m_SizeDelta: {x: 248.93, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &215737973
@@ -1073,7 +1089,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: How to Bathe
+  m_text: Take a Bath
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b4d6d0e7f6a49f34dab76efa7c8dcb74, type: 2}
   m_sharedMaterial: {fileID: 8790956909468634971, guid: b4d6d0e7f6a49f34dab76efa7c8dcb74, type: 2}
@@ -1211,7 +1227,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Go Get Dressed
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b4d6d0e7f6a49f34dab76efa7c8dcb74, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1277,7 +1293,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &239960091
@@ -1462,7 +1478,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -248}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 169.81, y: 43}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &271497908
 MonoBehaviour:
@@ -1564,8 +1580,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: -4536790050005521379, guid: 348430c0b0dca5b4ab5c9f48ada1159d, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2167,8 +2183,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: -4536790050005521379, guid: 348430c0b0dca5b4ab5c9f48ada1159d, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2312,8 +2328,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: -4536790050005521379, guid: 348430c0b0dca5b4ab5c9f48ada1159d, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2617,7 +2633,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Try Again
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b4d6d0e7f6a49f34dab76efa7c8dcb74, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -2683,7 +2699,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &659337654
@@ -3563,7 +3579,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9191937189054257683, guid: 8115d8ae1408f364681d36412a26b28c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 239
+      value: 226
       objectReference: {fileID: 0}
     - target: {fileID: 9191937189054257683, guid: 8115d8ae1408f364681d36412a26b28c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4232,8 +4248,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: -4536790050005521379, guid: 348430c0b0dca5b4ab5c9f48ada1159d, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -4479,8 +4495,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -116.8425}
-  m_SizeDelta: {x: 800, y: 150}
+  m_AnchoredPosition: {x: 0, y: -110.4}
+  m_SizeDelta: {x: 835.43, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1174926683
 MonoBehaviour:
@@ -4512,7 +4528,9 @@ MonoBehaviour:
     Use the dye and
     bleach to change the color of your hair.
 
-'
+
+    Clean yourself up so as to not
+    embarass yourself.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 580b894643e68d74199b48180027338a, type: 2}
   m_sharedMaterial: {fileID: -3899448264815451229, guid: 580b894643e68d74199b48180027338a, type: 2}
@@ -7103,8 +7121,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
