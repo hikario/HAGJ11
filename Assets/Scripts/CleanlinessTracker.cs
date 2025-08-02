@@ -19,7 +19,7 @@ public class CleanlinessTracker : MonoBehaviour
     private bool soapActive;
     private float soapMax;
     private bool combActive;
-    public float combMax;
+    private float combMax;
 
     private float curClean;
 
@@ -115,11 +115,15 @@ public class CleanlinessTracker : MonoBehaviour
                 }
                 if (combActive)
                 {
-                    if (combMax > 0)
+                    if (combMax > 0.5)
                     {
                         combMax = combMax - cleanTickAmount;
                         currentCleanlinessLevel = currentCleanlinessLevel - cleanTickAmount;
                         beard.material.SetFloat(beardCleanAmt, combMax / maxThird);
+                    }
+                    if (combMax <= 0.5)
+                    {
+                        beard.material.SetFloat(beardCleanAmt, 1);
                     }
                 }
             }
