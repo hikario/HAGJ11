@@ -41,6 +41,9 @@ public class CleanlinessTracker : MonoBehaviour
     private bool hairdye;
 
     public SpriteRenderer beard;
+
+    private GameObject hch;
+    private HairColorHolder hairColorHolder;
     #endregion
 
     #region VFXVars
@@ -68,6 +71,12 @@ public class CleanlinessTracker : MonoBehaviour
         beardCleanAmt = Shader.PropertyToID("_CombAmt");
         muddy.material.SetFloat(muddyAmt, waterMax);
         dirt.material.SetFloat(dirtAmt, soapMax);
+        hch = GameObject.FindGameObjectWithTag("HairColorHolder");
+        if (hch != null)
+        {
+            hairColorHolder = hch.GetComponent<HairColorHolder>();
+            currentHairColor = hairColorHolder.storedHairColor;
+        }
     }
 
     void Update()
@@ -136,6 +145,7 @@ public class CleanlinessTracker : MonoBehaviour
             if (!isDye)
             {
                 currentHairColor = currentHairColor + ((dyeTickAmount * 3) * Time.deltaTime);
+                hairColorHolder.StoreHairColor();
             }
             else
             {
@@ -144,6 +154,7 @@ public class CleanlinessTracker : MonoBehaviour
                     currentHairColor.b = currentHairColor.b - ((dyeTickAmount.b * 3) * Time.deltaTime);
                     currentHairColor.r = currentHairColor.r + ((dyeTickAmount.r * 3) * Time.deltaTime);
                     currentHairColor.g = currentHairColor.g - (dyeTickAmount.g * Time.deltaTime);
+                    hairColorHolder.StoreHairColor();
                 }
             }
         }

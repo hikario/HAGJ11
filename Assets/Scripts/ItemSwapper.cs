@@ -26,11 +26,14 @@ public class ItemSwapper : MonoBehaviour
 
     private AudioSource audioSource;
 
+    private bool audioPlaying;
+
     void Start()
     {
         cleanlinessTracker = GameObject.Find("CleanlinessTracker");
         cleanTrack = cleanlinessTracker.GetComponent<CleanlinessTracker>();
         isClicking = false;
+        audioPlaying = false;
     }
 
     void Update()
@@ -42,6 +45,11 @@ public class ItemSwapper : MonoBehaviour
             {
                 if (isClicking == true)
                 {
+                    if (!audioPlaying)
+                    {
+                        audioPlaying = true;
+                        audioSource.Play();
+                    }
                     if (isWash)
                     {
                         cleanTrack.Wash();
@@ -50,6 +58,11 @@ public class ItemSwapper : MonoBehaviour
                     {
                         cleanTrack.Dye(dye);
                     }
+                }
+                else
+                {
+                    audioPlaying = false;
+                    audioSource.Stop();
                 }
             }
         }
@@ -118,7 +131,6 @@ public class ItemSwapper : MonoBehaviour
     {
         currentSprite.GetComponent<AudioSource>().clip = audioClip;
         audioSource.loop = true;
-        audioSource.Play();
     }
 
     // coded for bath item buttons to know if they are wash or dye

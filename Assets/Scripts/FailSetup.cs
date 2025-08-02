@@ -19,13 +19,13 @@ public class FailSetup : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        nextButton.SetActive(false);
         failed = starScore.GetComponent<StarScore>().failed;
         audioS = audioSource.GetComponent<AudioSource>();
         ogVolume = audioS.volume;
         audioS.loop = false;
         if (failed)
         {
+            nextButton.SetActive(false);
             failSoundPlayed = true;
             audioS.clip = failSound;
             audioS.volume = ogVolume;

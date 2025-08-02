@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Viking
   - MMAudio
+  - CleanlinessTracker
+  - HairColorHolder
   layers:
   - Default
   - TransparentFX
