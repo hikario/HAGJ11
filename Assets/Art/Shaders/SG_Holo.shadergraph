@@ -2266,7 +2266,7 @@
     "m_ObjectId": "a4257e360d0841fab2048de209121b45",
     "m_Title": "View Direction-based Color Shift",
     "m_Position": {
-        "x": -2198.0,
+        "x": -2197.999755859375,
         "y": -361.9999694824219
     }
 }
@@ -2472,8 +2472,8 @@
     "m_ObjectId": "bd9b41d880d04d7aa0172a192f466d4c",
     "m_Title": "Foil Pattern",
     "m_Position": {
-        "x": -2406.0,
-        "y": 63.00008773803711
+        "x": -2405.999755859375,
+        "y": 63.00007247924805
     }
 }
 

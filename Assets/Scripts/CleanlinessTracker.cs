@@ -6,53 +6,124 @@ public class CleanlinessTracker : MonoBehaviour
     public float max = 30;
     public float cleanTickAmount = 0.01f;
     public float currentCleanlinessLevel;
-    #endregion
 
-    #region DyeVars
-    public Vector3 beginningHairColor;
-    public Vector3 currentHairColor;
-    public Vector3 dyeTickAmount;
-    #endregion
-
-    #region VFXVars
-    [SerializeField]
-    public ParticleSystem sparkleParticles;
-    #endregion
-
-    private bool timer;
-    private int tTime;
+    private float curWash;
 
     private float cleanLevel1;
     private float cleanLevel2;
     private float cleanLevel3;
 
+    private float maxThird;
+    private bool waterActive;
+    private float waterMax;
+    private bool soapActive;
+    private float soapMax;
+    private bool combActive;
+    public float combMax;
+
     private float curClean;
 
-    private GameObject starScore;
+    public Renderer muddy;
+    private int muddyAmt;
+
+    public Renderer dirt;
+    private int dirtAmt;
+
+    private int beardCleanAmt;
+    #endregion
+
+    #region DyeVars
+    public Color currentHairColor;
+    public Color dyeTickAmount;
 
     private bool hairdye;
+
+    public SpriteRenderer beard;
+    #endregion
+
+    #region VFXVars
+    [SerializeField]
+    public ParticleSystem sparkleParticles;
+    public ParticleSystem wetVFX;
+    private bool isWet;
+    #endregion
+
+    private bool timer;
+    private int tTime;
+
+    private GameObject starScore;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         currentCleanlinessLevel = max;
-        currentHairColor = beginningHairColor;
+        maxThird = max / 3;
+        waterMax = maxThird;
+        soapMax = maxThird;
+        combMax = maxThird;
+        currentHairColor = beard.color;
         timer = false;
         curClean = 0;
         starScore = GameObject.Find("StarScore");
+        muddyAmt = Shader.PropertyToID("_MaskAmount");
+        dirtAmt = Shader.PropertyToID("_MaskAmount");
+        beardCleanAmt = Shader.PropertyToID("_CombAmt");
+        muddy.material.SetFloat(muddyAmt, waterMax);
+        dirt.material.SetFloat(dirtAmt, soapMax);
     }
 
     void Update()
     {
         CleanLevel();
         WashTimer();
+        EnsureMaxColor();
+        EnsureMinColor();
+        beard.color = currentHairColor;
     }
 
     public void Wash()
     {
         if (currentCleanlinessLevel > 0)
         {
-            currentCleanlinessLevel = currentCleanlinessLevel - cleanTickAmount;
+            if (waterActive)
+            { 
+                if (waterMax > 0)
+                {
+                    waterMax = waterMax - cleanTickAmount;
+                    currentCleanlinessLevel = currentCleanlinessLevel - cleanTickAmount;
+                    muddy.material.SetFloat(muddyAmt, waterMax);
+                }
+                if (waterMax <= 0)
+                {
+                    if (!isWet)
+                    {
+                        isWet = true;
+                        wetVFX.Play();
+                    }
+                }
+            }
+            if (isWet)
+            {
+                if (soapActive)
+                {
+                    if (soapMax > 0)
+                    {
+                        soapMax = soapMax - cleanTickAmount;
+                        currentCleanlinessLevel = currentCleanlinessLevel - cleanTickAmount;
+                        dirt.material.SetFloat(dirtAmt, soapMax);
+                    }
+                }
+                if (combActive)
+                {
+                    if (combMax > 0)
+                    {
+                        combMax = combMax - cleanTickAmount;
+                        currentCleanlinessLevel = currentCleanlinessLevel - cleanTickAmount;
+                        beard.material.SetFloat(beardCleanAmt, combMax / maxThird);
+                    }
+                }
+            }
+            
         }
     }
 
@@ -61,16 +132,15 @@ public class CleanlinessTracker : MonoBehaviour
         hairdye = isDye;
         if (!isDye)
         {
-            if (currentHairColor.x > 0)
-            {
-                currentHairColor = currentHairColor - dyeTickAmount;
-            }
+            currentHairColor = currentHairColor + dyeTickAmount;
         }
         else
         {
-            if (currentHairColor.x < 255)
+            if (currentHairColor.r <= 1)
             {
-                currentHairColor = currentHairColor + dyeTickAmount;
+                currentHairColor.b = currentHairColor.b - (dyeTickAmount.b);
+                currentHairColor.r = currentHairColor.r + (dyeTickAmount.r);
+                currentHairColor.g = currentHairColor.g - (dyeTickAmount.g * 0.3f);
             }
         }
     }
@@ -119,7 +189,70 @@ public class CleanlinessTracker : MonoBehaviour
     // Set Sparkle when curClean = 3
     void SetSparkle()
     {
-        Debug.Log("setting sparkle!!!!");
         sparkleParticles.Play();
     }
+
+    #region ColorRange
+    void EnsureMaxColor()
+    {
+        if (currentHairColor.r > 1)
+        {
+            currentHairColor.r = 1;
+        }
+        if (currentHairColor.g > 1)
+        {
+            currentHairColor.g = 1;
+        }
+        if (currentHairColor.b > 1)
+        {
+            currentHairColor.b = 1;
+        }
+    }
+
+    void EnsureMinColor()
+    {
+        if (currentHairColor.r < 0.15)
+        {
+            currentHairColor.r = 0.15f;
+        }
+        if (currentHairColor.g < 0.30)
+        {
+            currentHairColor.g = 0.30f;
+        }
+        if (currentHairColor.b < 0)
+        {
+            currentHairColor.b = 0;
+        }
+    }
+    #endregion
+
+    #region ActivateBools
+    public void ActivateWater()
+    {
+        waterActive = true;
+        soapActive = false;
+        combActive = false;
+    }
+
+    public void ActivateSoap()
+    {
+        waterActive = false;
+        soapActive = true;
+        combActive = false;
+    }
+
+    public void ActivateComb()
+    {
+        waterActive = false;
+        soapActive = false;
+        combActive = true;
+    }
+
+    public void DeactivateAll()
+    {
+        waterActive = false;
+        soapActive = false;
+        combActive = false;
+    }
+    #endregion
 }
