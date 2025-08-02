@@ -121,9 +121,9 @@ public class CleanlinessTracker : MonoBehaviour
                         currentCleanlinessLevel = currentCleanlinessLevel - cleanTickAmount;
                         beard.material.SetFloat(beardCleanAmt, combMax / maxThird);
                     }
-                    if (combMax <= 0.5)
+                    if (combMax <= maxThird/2)
                     {
-                        beard.material.SetFloat(beardCleanAmt, 1);
+                        beard.material.SetFloat(beardCleanAmt, 0);
                     }
                 }
             }
