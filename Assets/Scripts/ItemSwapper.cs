@@ -22,9 +22,14 @@ public class ItemSwapper : MonoBehaviour
 
     public Vector3 sp;
 
+    private CleanlinessTracker cleanTrack;
+
+    private AudioSource audioSource;
+
     void Start()
     {
         cleanlinessTracker = GameObject.Find("CleanlinessTracker");
+        cleanTrack = cleanlinessTracker.GetComponent<CleanlinessTracker>();
         isClicking = false;
     }
 
@@ -39,11 +44,11 @@ public class ItemSwapper : MonoBehaviour
                 {
                     if (isWash)
                     {
-                        cleanlinessTracker.GetComponent<CleanlinessTracker>().Wash();
+                        cleanTrack.Wash();
                     }
                     else
                     {
-                        cleanlinessTracker.GetComponent<CleanlinessTracker>().Dye(dye);
+                        cleanTrack.Dye(dye);
                     }
                 }
             }
@@ -65,6 +70,7 @@ public class ItemSwapper : MonoBehaviour
         {
             currentPar = Instantiate(particleSystem);
             currentSprite = Instantiate(itemSprite);
+            audioSource = currentSprite.AddComponent<AudioSource>();
         }
     }
 
@@ -81,13 +87,11 @@ public class ItemSwapper : MonoBehaviour
         {
             currentPar.Play();
             isClicking = true;
-            cleanlinessTracker.GetComponent<CleanlinessTracker>().StartWashTimer(true);
         }
         else if (Input.GetMouseButtonUp(0))
         {
             currentPar.Stop();
             isClicking = false;
-            cleanlinessTracker.GetComponent<CleanlinessTracker>().StartWashTimer(false);
         }
     }
 
@@ -108,6 +112,13 @@ public class ItemSwapper : MonoBehaviour
         {
             currentItem = curItem;
         }
+    }
+
+    public void SetAudio(AudioClip audioClip)
+    {
+        currentSprite.GetComponent<AudioSource>().clip = audioClip;
+        audioSource.loop = true;
+        audioSource.Play();
     }
 
     // coded for bath item buttons to know if they are wash or dye

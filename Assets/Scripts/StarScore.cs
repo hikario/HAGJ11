@@ -8,6 +8,7 @@ public class StarScore : MonoBehaviour
     public GameObject star3;
     public GameObject results;
     public GameObject mimirCanvas;
+    public bool failed;
 
     void Start()
     {
@@ -26,12 +27,14 @@ public class StarScore : MonoBehaviour
             results.GetComponent<ObjectTimerFlipper>().RemoveNext();
             // results.GetComponent<ObjectTimerFlipper>().MakeFinalFlip();
             results.GetComponent<ObjectTimerFlipper>().AddNext(mimirCanvas);
+            failed = true;
         }
         if (stars == 1)
         {
             star1.GetComponent<ObjectTimerFlipper>().RemoveNext();
             // star1.GetComponent<ObjectTimerFlipper>().MakeFinalFlip();
             star1.GetComponent<ObjectTimerFlipper>().AddNext(mimirCanvas);
+            failed = true;
         }
         if (stars == 2)
         {

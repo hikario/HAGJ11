@@ -6,6 +6,7 @@ public class AudioFade : MonoBehaviour
 {
     public AudioSource MusicSource;
     private bool musicFadeOutEnabled = false;
+    private bool fadeDone;
 
     public void PlayerMusic()
     {
@@ -30,7 +31,7 @@ public class AudioFade : MonoBehaviour
             }
             else
             {
-                float newVolume = MusicSource.volume - (0.01f * Time.deltaTime);  //change 0.01f to something else to adjust the rate of the volume dropping
+                float newVolume = MusicSource.volume - (0.1f * Time.deltaTime);  //change 0.01f to something else to adjust the rate of the volume dropping
                 if (newVolume < 0f)
                 {
                     newVolume = 0f;

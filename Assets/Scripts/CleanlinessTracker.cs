@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 public class CleanlinessTracker : MonoBehaviour
 {
@@ -48,9 +50,6 @@ public class CleanlinessTracker : MonoBehaviour
     private bool isWet;
     #endregion
 
-    private bool timer;
-    private int tTime;
-
     private GameObject starScore;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -62,7 +61,6 @@ public class CleanlinessTracker : MonoBehaviour
         soapMax = maxThird;
         combMax = maxThird;
         currentHairColor = beard.color;
-        timer = false;
         curClean = 0;
         starScore = GameObject.Find("StarScore");
         muddyAmt = Shader.PropertyToID("_MaskAmount");
@@ -75,7 +73,6 @@ public class CleanlinessTracker : MonoBehaviour
     void Update()
     {
         CleanLevel();
-        WashTimer();
         EnsureMaxColor();
         EnsureMinColor();
         beard.color = currentHairColor;
@@ -89,8 +86,8 @@ public class CleanlinessTracker : MonoBehaviour
             { 
                 if (waterMax > 0)
                 {
-                    waterMax = waterMax - cleanTickAmount;
-                    currentCleanlinessLevel = currentCleanlinessLevel - cleanTickAmount;
+                    waterMax = waterMax - (cleanTickAmount * Time.deltaTime);
+                    currentCleanlinessLevel = currentCleanlinessLevel - (cleanTickAmount * Time.deltaTime);
                     muddy.material.SetFloat(muddyAmt, waterMax);
                 }
                 if (waterMax <= 0)
@@ -108,8 +105,8 @@ public class CleanlinessTracker : MonoBehaviour
                 {
                     if (soapMax > 0)
                     {
-                        soapMax = soapMax - cleanTickAmount;
-                        currentCleanlinessLevel = currentCleanlinessLevel - cleanTickAmount;
+                        soapMax = soapMax - (cleanTickAmount * Time.deltaTime); 
+                        currentCleanlinessLevel = currentCleanlinessLevel - (cleanTickAmount * Time.deltaTime);
                         dirt.material.SetFloat(dirtAmt, soapMax);
                     }
                 }
@@ -117,11 +114,11 @@ public class CleanlinessTracker : MonoBehaviour
                 {
                     if (combMax > 0.5)
                     {
-                        combMax = combMax - cleanTickAmount;
-                        currentCleanlinessLevel = currentCleanlinessLevel - cleanTickAmount;
-                        beard.material.SetFloat(beardCleanAmt, combMax / maxThird);
+                        combMax = combMax - (cleanTickAmount * Time.deltaTime);
+                        currentCleanlinessLevel = currentCleanlinessLevel - (cleanTickAmount * Time.deltaTime);
+                        // beard.material.SetFloat(beardCleanAmt, (combMax / maxThird);
                     }
-                    if (combMax <= maxThird/2)
+                    if (combMax <= ((maxThird/3) * 2))
                     {
                         beard.material.SetFloat(beardCleanAmt, 0);
                     }
@@ -134,37 +131,22 @@ public class CleanlinessTracker : MonoBehaviour
     public void Dye(bool isDye)
     {
         hairdye = isDye;
-        if (!isDye)
+        if (isWet)
         {
-            currentHairColor = currentHairColor + dyeTickAmount;
-        }
-        else
-        {
-            if (currentHairColor.r <= 1)
+            if (!isDye)
             {
-                currentHairColor.b = currentHairColor.b - (dyeTickAmount.b);
-                currentHairColor.r = currentHairColor.r + (dyeTickAmount.r);
-                currentHairColor.g = currentHairColor.g - (dyeTickAmount.g * 0.3f);
+                currentHairColor = currentHairColor + ((dyeTickAmount * 3) * Time.deltaTime);
+            }
+            else
+            {
+                if (currentHairColor.r <= 1)
+                {
+                    currentHairColor.b = currentHairColor.b - ((dyeTickAmount.b * 3) * Time.deltaTime);
+                    currentHairColor.r = currentHairColor.r + ((dyeTickAmount.r * 3) * Time.deltaTime);
+                    currentHairColor.g = currentHairColor.g - (dyeTickAmount.g * Time.deltaTime);
+                }
             }
         }
-    }
-
-    void WashTimer()
-    {
-        if (timer)
-        {
-            tTime += Mathf.RoundToInt(Time.deltaTime);
-        }
-        else
-        {
-            tTime = 0; // Reset
-        }
-        // Debug.Log(tTime);
-    }
-
-    public void StartWashTimer(bool run)
-    {
-        timer = run;
     }
 
     // Determine cleanlevel for stars

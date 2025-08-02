@@ -8,6 +8,10 @@ public class ItemInfo : MonoBehaviour
     private GameObject itemSprite;
     [SerializeField]
     private GameObject itemSwapper;
+    [SerializeField]
+    private AudioClip audioClip;
+
+    private GameObject instancedGO;
 
     public bool dye;
 
@@ -26,5 +30,9 @@ public class ItemInfo : MonoBehaviour
         itemSwapper.GetComponent<ItemSwapper>().SwapItem();
         itemSwapper.GetComponent<ItemSwapper>().SetCurrentGameObject(gameObject);
         itemSwapper.GetComponent<ItemSwapper>().SetDye(dye);
+        if (audioClip != null)
+        {
+            itemSwapper.GetComponent<ItemSwapper>().SetAudio(audioClip);
+        }
     }
 }

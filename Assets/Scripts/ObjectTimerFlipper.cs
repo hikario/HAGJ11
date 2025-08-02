@@ -5,7 +5,7 @@ using TMPro;
 public class ObjectTimerFlipper : MonoBehaviour
 {
     [SerializeField]
-    private GameObject nextObject;
+    public GameObject nextObject;
     public bool turnOff;
     public bool startFlipper;
     public bool finalFlip;
