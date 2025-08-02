@@ -1,0 +1,6 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement focusable="false" style="flex-grow: 1; align-self: stretch; align-content: auto; align-items: flex-start;">
+        <ui:Image name="ImageTile" style="flex-grow: 0; background-color: rgb(255, 255, 255); width: 128px; height: 128px;" />
+        <ui:Label name="NameSelector" />
+    </ui:VisualElement>
+</ui:UXML>

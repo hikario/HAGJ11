@@ -1,0 +1,8 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:Template name="Clothing" src="project://database/Assets/Scripts/UI/Resources/Clothing.uxml?fileID=9197481963319205126&amp;guid=558012beb25e2d14cbdeda485ddec732&amp;type=3#Clothing" />
+    <ui:VisualElement name="VisualElement" style="flex-grow: 1; flex-direction: row; height: 20%;">
+        <ui:Instance template="Clothing" style="flex-grow: 1;" />
+        <ui:Instance template="Clothing" style="flex-grow: 1;" />
+        <ui:Instance template="Clothing" style="flex-grow: 1;" />
+    </ui:VisualElement>
+</ui:UXML>
