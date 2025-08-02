@@ -845,15 +845,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2054063437650820475, guid: 8115d8ae1408f364681d36412a26b28c, type: 3}
       propertyPath: badText
-      value: 'Hmm... Why don''t you get back in there and try again... '
+      value: Hmm... Why don't you get back in there and try again... Check behind
+        your ears this time... and everywhere else...
       objectReference: {fileID: 0}
     - target: {fileID: 2054063437650820475, guid: 8115d8ae1408f364681d36412a26b28c, type: 3}
       propertyPath: midText
-      value: Good enough. You could have done better, but let's move on.
+      value: Well... At least you got most of the mud off... You could have done
+        better, but it's time to start the day...
       objectReference: {fileID: 0}
     - target: {fileID: 2054063437650820475, guid: 8115d8ae1408f364681d36412a26b28c, type: 3}
       propertyPath: goodText
-      value: Well done... You can now go out with pride. Now put on some clothes...
+      value: Well done... Your skin is gleaming and your hair is combed. You can
+        now go out with pride. Now put on some clothes...
       objectReference: {fileID: 0}
     - target: {fileID: 2054063437650820475, guid: 8115d8ae1408f364681d36412a26b28c, type: 3}
       propertyPath: typingSpeed
@@ -1865,7 +1868,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 9c01ed8f39efa9548957a0beac7bf370, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2660,7 +2663,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   max: 100
-  cleanTickAmount: 0.1
+  cleanTickAmount: 0.3
   currentCleanlinessLevel: 0
   muddy: {fileID: 383958578}
   dirt: {fileID: 1210356840}
@@ -4301,7 +4304,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: e01a91802e8532444adad7ab2ad07efe, type: 3}
   m_Color: {r: 0.39215687, g: 0.3137255, b: 0.23529412, a: 1}
   m_FlipX: 0
@@ -4729,7 +4732,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: c3f6e468e7fee7943b77f8c232a46f29, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -10410,7 +10413,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -11067,6 +11070,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SparkleParticles
       objectReference: {fileID: 0}
+    - target: {fileID: 3904590494742056708, guid: 5e2a4464cc48c264f899547d0e06b0bd, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 6592039713554185092, guid: 5e2a4464cc48c264f899547d0e06b0bd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -11077,7 +11084,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6592039713554185092, guid: 5e2a4464cc48c264f899547d0e06b0bd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 3.94
       objectReference: {fileID: 0}
     - target: {fileID: 6592039713554185092, guid: 5e2a4464cc48c264f899547d0e06b0bd, type: 3}
       propertyPath: m_LocalRotation.w
