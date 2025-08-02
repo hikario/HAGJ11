@@ -15,14 +15,17 @@ EditorBuildSettings:
     path: Assets/Scenes/02_BathHouse.unity
     guid: aa66a32c1bc67aa43847fbd24f6be819
   - enabled: 1
-    path: Assets/Scenes/04_DressUp.unity
-    guid: 9a72baa9c28c1584bbaf66971da0316b
+    path: Assets/Scenes/ClothesGame.unity
+    guid: 170f5066b567d8e40aa1f8eac555de0f
   - enabled: 1
     path: Assets/Scenes/06_LoreWrap.unity
     guid: 12f7a12ac549e154ab106e0740c61d4c
   - enabled: 1
     path: Assets/Scenes/09_End Scene.unity
     guid: bb8e831bcdf755a489cfdf0fe4846c0d
+  - enabled: 0
+    path: Assets/Scenes/04_DressUp.unity
+    guid: 9a72baa9c28c1584bbaf66971da0316b
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

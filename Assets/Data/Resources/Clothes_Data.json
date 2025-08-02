@@ -1,0 +1,140 @@
+{
+	"tops": [
+		{
+			"clothingName": "Shirt",
+			"image": "Clothes/shirt",
+			"point_allocation": {
+				"cool": 5,
+				"dark": -2,
+				"fancy": -2
+			},
+			"description": "A colorful top, Vikings wore these for reasons."
+		},
+		{
+			"clothingName": "Shirt2",
+			"image": "Clothes/shirt",
+			"point_allocation": {
+				"cool": -2,
+				"dark": 5,
+				"fancy": -2
+			},
+			"description": "An edgy top, Vikings wore these for reasons."
+		},
+		{
+			"clothingName": "Shirt3",
+			"image": "Clothes/shirt",
+			"point_allocation": {
+				"cool": -2,
+				"dark": -2,
+				"fancy": 5
+			},
+			"description": "A frilly and foppish top, Vikings wore these for reasons."
+		},
+		{
+			"clothingName": "Shirt4",
+			"image": "Clothes/shirt",
+			"point_allocation": {
+				"cool": 0,
+				"dark": 1,
+				"fancy": 2
+			},
+			"description": "A stylish top, Vikings didn't wear these."
+		}
+	],
+	"bottoms": [
+		{
+			"clothingName": "Pants",
+			"image": "Clothes/pant",
+			"point_allocation": {
+				"cool": 5,
+				"dark": -2,
+				"fancy": -2
+			},
+			"description": "A colorful pair of pants. Vikings wore these for reasons."
+		},
+		{
+			"clothingName": "Pants2",
+			"image": "Clothes/pant",
+			"point_allocation": {
+				"cool": -2,
+				"dark": -2,
+				"fancy": 5
+			},
+			"description": "An edgy pair of pants. Vikings wore these for reasons."
+		},
+		{
+			"clothingName": "Pants3",
+			"image": "Clothes/pant",
+			"point_allocation": {
+				"cool": -2,
+				"dark": 5,
+				"fancy": -2
+			},
+			"description": "A frilly and foppish pair of pants. Vikings wore these for reasons."
+		},
+		{
+			"clothingName": "Pants4",
+			"image": "Clothes/pant",
+			"point_allocation": {
+				"cool": 2,
+				"dark": 1,
+				"fancy": 0
+			},
+			"description": "A stylish pair of pants. Vikings didn't wear these."
+		}
+	],
+	"hats": [
+		{
+			"clothingName": "Hat",
+			"image": "Clothes/hat",
+			"point_allocation": {
+				"cool": 5,
+				"dark": -2,
+				"fancy": -2
+			},
+			"description": "A colorful hat, Vikings wore these for reasons."
+		},
+		{
+			"clothingName": "Hat2",
+			"image": "Clothes/hat",
+			"point_allocation": {
+				"cool": -2,
+				"dark": 5,
+				"fancy": -2
+			},
+			"description": "An edgy hat, Vikings wore these for reasons."
+		},
+		{
+			"clothingName": "Hat3",
+			"image": "Clothes/hat",
+			"point_allocation": {
+				"cool": -2,
+				"dark": -2,
+				"fancy": 5
+			},
+			"description": "A frilly and foppish hat, Vikings wore these for reasons."
+		},
+		{
+			"clothingName": "Hat4",
+			"image": "Clothes/hat",
+			"point_allocation": {
+				"cool": 2,
+				"dark": 1,
+				"fancy": 2
+			},
+			"description": "A stylish hat, Vikings didn't wear these."
+		}
+	],
+	"footwear": [
+		{
+			"clothingName": "Shoes",
+			"image": "Clothes/shoes",
+			"point_allocation": {
+				"cool": 5,
+				"dark": 0,
+				"fancy": 0
+			},
+			"description": "A sensible pair of shoes. Vikings liked comfortable footwear."
+		}
+	]
+}
