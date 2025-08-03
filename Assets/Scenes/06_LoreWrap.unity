@@ -138,7 +138,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &41257552
 RectTransform:
   m_ObjectHideFlags: 0
@@ -200,8 +200,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Laugardagr\n\nlaug (\u201Cbath\u201D) + dagr (\u201Cday\u201D) - Bathing
-    day"
+  m_text: 'Laugardagr
+
+
+    The day of bathing for vikings...'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b4d6d0e7f6a49f34dab76efa7c8dcb74, type: 2}
   m_sharedMaterial: {fileID: 8790956909468634971, guid: b4d6d0e7f6a49f34dab76efa7c8dcb74, type: 2}
@@ -1000,7 +1002,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1014852880
 RectTransform:
   m_ObjectHideFlags: 0

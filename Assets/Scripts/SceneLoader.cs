@@ -12,6 +12,11 @@ public class SceneLoader: MonoBehaviour
         SceneManager.LoadScene("00_MainMenu");
     }
 
+    public void LoadMainMenuSceneWithDelay()
+    {
+        Invoke("LoadMainMenuScene", delay);
+    }
+
     public void NextScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
