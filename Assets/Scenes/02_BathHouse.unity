@@ -2693,9 +2693,10 @@ MonoBehaviour:
   max: 100
   cleanTickAmount: 4
   currentCleanlinessLevel: 0
+  soapMax: 0
   muddy: {fileID: 383958578}
   dirt: {fileID: 1210356840}
-  currentHairColor: {r: 0.46226418, g: 0, b: 0, a: 0}
+  currentHairColor: {r: 0.46226418, g: 0.15073831, b: 0.12428801, a: 0}
   dyeTickAmount: {r: 0.05882353, g: 0.05882353, b: 0.05882353, a: 0}
   beard: {fileID: 1038624989}
   sparkleParticles: {fileID: 1749695152}
@@ -4156,6 +4157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   storedHairColor: {r: 0.39215687, g: 0.3137255, b: 0.23529412, a: 1}
+  storedDirtAmt: 0
 --- !u!4 &950745502
 Transform:
   m_ObjectHideFlags: 0
