@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class HairColorHolder : MonoBehaviour
 {
     public Color storedHairColor;
+    public float storedDirtAmt;
     private GameObject ct;
     private CleanlinessTracker cleanlinessTracker;
 
@@ -25,16 +26,15 @@ public class HairColorHolder : MonoBehaviour
         }
     }
 
-    //void Update()
-    //{
-    //    if (cleanlinessTracker != null)
-    //    {
-    //        StoreHairColor();
-    //    }
-    //}
     public void StoreHairColor()
     {
 
         storedHairColor = cleanlinessTracker.currentHairColor;
+    }
+
+    public void StoreDirtAmt()
+    {
+
+        storedDirtAmt = cleanlinessTracker.soapMax;
     }
 }

@@ -19,7 +19,7 @@ public class CleanlinessTracker : MonoBehaviour
     private bool waterActive;
     private float waterMax;
     private bool soapActive;
-    private float soapMax;
+    public float soapMax;
     private bool combActive;
     private float combMax;
 
@@ -76,6 +76,7 @@ public class CleanlinessTracker : MonoBehaviour
         {
             hairColorHolder = hch.GetComponent<HairColorHolder>();
             currentHairColor = hairColorHolder.storedHairColor;
+            soapMax = hairColorHolder.storedDirtAmt;
         }
     }
 
@@ -145,7 +146,6 @@ public class CleanlinessTracker : MonoBehaviour
             if (!isDye)
             {
                 currentHairColor = currentHairColor + ((dyeTickAmount * 3) * Time.deltaTime);
-                hairColorHolder.StoreHairColor();
             }
             else
             {
@@ -154,7 +154,6 @@ public class CleanlinessTracker : MonoBehaviour
                     currentHairColor.b = currentHairColor.b - ((dyeTickAmount.b * 3) * Time.deltaTime);
                     currentHairColor.r = currentHairColor.r + ((dyeTickAmount.r * 3) * Time.deltaTime);
                     currentHairColor.g = currentHairColor.g - (dyeTickAmount.g * Time.deltaTime);
-                    hairColorHolder.StoreHairColor();
                 }
             }
         }
@@ -167,6 +166,8 @@ public class CleanlinessTracker : MonoBehaviour
         cleanLevel2 = cleanLevel1 * 2;
         cleanLevel3 = cleanLevel1 * 3;
         starScore.GetComponent<StarScore>().StarLevel(curClean);
+        hairColorHolder.StoreHairColor();
+        hairColorHolder.StoreDirtAmt();
 
         if (currentCleanlinessLevel >= cleanLevel2 && currentCleanlinessLevel < cleanLevel3)
         {
