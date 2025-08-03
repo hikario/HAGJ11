@@ -192,33 +192,33 @@ public class CleanlinessTracker : MonoBehaviour
     #region ColorRange
     void EnsureMaxColor()
     {
-        if (currentHairColor.r > 1)
+        if (currentHairColor.r > 0.55f)
         {
-            currentHairColor.r = 1;
+            currentHairColor.r = 0.55f;
         }
-        if (currentHairColor.g > 1)
+        if (currentHairColor.g > 0.4f)
         {
-            currentHairColor.g = 1;
+            currentHairColor.g = 0.4f;
         }
-        if (currentHairColor.b > 1)
+        if (currentHairColor.b > 0.3f)
         {
-            currentHairColor.b = 1;
+            currentHairColor.b = 0.3f;
         }
     }
 
     void EnsureMinColor()
     {
-        if (currentHairColor.r < 0.15)
+        if (currentHairColor.r < 0.4f)
         {
-            currentHairColor.r = 0.15f;
+            currentHairColor.r = 0.4f;
         }
-        if (currentHairColor.g < 0.30)
+        if (currentHairColor.g < 0.15)
         {
-            currentHairColor.g = 0.30f;
+            currentHairColor.g = 0.15f;
         }
-        if (currentHairColor.b < 0)
+        if (currentHairColor.b < 0.1f)
         {
-            currentHairColor.b = 0;
+            currentHairColor.b = 0.1f;
         }
     }
     #endregion
