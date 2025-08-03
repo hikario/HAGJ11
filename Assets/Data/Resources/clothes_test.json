@@ -1,0 +1,13 @@
+{
+	"test": [
+		{
+			"clothingName": "Shirt",
+			"image": "Clothes/shirt",
+			"point_allocation": {
+				"cool": 5,
+				"dark": 0,
+				"fancy": 0
+			}
+		}
+	]
+}

@@ -294,6 +294,106 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa0bf50d553a9794a9ff455538df7f25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &106624365
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4110084090257699607, guid: 20347354bc296774c9d1a36d0e16f0c8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 544.5815
+      objectReference: {fileID: 0}
+    - target: {fileID: 4110084090257699607, guid: 20347354bc296774c9d1a36d0e16f0c8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 207.75104
+      objectReference: {fileID: 0}
+    - target: {fileID: 4110084090257699607, guid: 20347354bc296774c9d1a36d0e16f0c8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.679845
+      objectReference: {fileID: 0}
+    - target: {fileID: 4110084090257699607, guid: 20347354bc296774c9d1a36d0e16f0c8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4110084090257699607, guid: 20347354bc296774c9d1a36d0e16f0c8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4110084090257699607, guid: 20347354bc296774c9d1a36d0e16f0c8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4110084090257699607, guid: 20347354bc296774c9d1a36d0e16f0c8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4110084090257699607, guid: 20347354bc296774c9d1a36d0e16f0c8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4110084090257699607, guid: 20347354bc296774c9d1a36d0e16f0c8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4110084090257699607, guid: 20347354bc296774c9d1a36d0e16f0c8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6007919492547757691, guid: 20347354bc296774c9d1a36d0e16f0c8, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 0a59a9cb332ace44e9b708cd13d68027, type: 3}
+    - target: {fileID: 7679107610652506620, guid: 20347354bc296774c9d1a36d0e16f0c8, type: 3}
+      propertyPath: m_Name
+      value: Audio Source
+      objectReference: {fileID: 0}
+    - target: {fileID: 7679107610652506620, guid: 20347354bc296774c9d1a36d0e16f0c8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7679107610652506620, guid: 20347354bc296774c9d1a36d0e16f0c8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 106624367}
+    - targetCorrespondingSourceObject: {fileID: 7679107610652506620, guid: 20347354bc296774c9d1a36d0e16f0c8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 106624368}
+  m_SourcePrefab: {fileID: 100100000, guid: 20347354bc296774c9d1a36d0e16f0c8, type: 3}
+--- !u!1 &106624366 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7679107610652506620, guid: 20347354bc296774c9d1a36d0e16f0c8, type: 3}
+  m_PrefabInstance: {fileID: 106624365}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &106624367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 106624366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f6fa109acb433e4093d0cd054015876, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &106624368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 106624366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ae31e6babbea214ebec2e76ee617b92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &143662562
 GameObject:
   m_ObjectHideFlags: 0
@@ -526,12 +626,12 @@ MonoBehaviour:
   nextObject: {fileID: 1857020851}
   turnOff: 1
   startFlipper: 0
-  finalFlip: 0
+  finalFlip: 1
   textToUse: {fileID: 431441214}
   fadeIn: 1
   textHangTime: 5
-  sceneLoader: {fileID: 0}
-  fadeScreenCanvas: {fileID: 0}
+  sceneLoader: {fileID: 1952238670}
+  fadeScreenCanvas: {fileID: 156975144}
   delay: 1
 --- !u!114 &431441214
 MonoBehaviour:
@@ -553,12 +653,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\"The Danes made themselves too acceptable to English women by their elegant
-    manners and their care of their person. They combed their hair every day, bathed
-    every Saturday, and even changed their garments often. They set off their persons
-    by many such frivolous devices. In this manner, they laid siege to the virtue
-    of the married women and persuaded the daughters, even of the nobles, to be their
-    concubines.\"\n\n\t\t\t\t-John of Wallingford\u2019s Chronicle, 1220"
+  m_text: "Water and towels\nand welcoming speech\r\nShould he find who comes, to
+    the feast;\r\nIf renown he would get,\nand again be greeted,\r\nWisely and well
+    must he act.\n\t\t\t\t- Havamal (verse 4)"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 580b894643e68d74199b48180027338a, type: 2}
   m_sharedMaterial: {fileID: -3899448264815451229, guid: 580b894643e68d74199b48180027338a, type: 2}
@@ -1036,7 +1133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextObject: {fileID: 431441211}
   turnOff: 1
-  startFlipper: 0
+  startFlipper: 1
   finalFlip: 0
   textToUse: {fileID: 1014852882}
   fadeIn: 1
@@ -1064,9 +1161,22 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "For the vikings, bathing, grooming, and self hygiene were important parts
-    of daily life. \n\nThey valued cleanliness, and it was socially crucial to keep
-    yourself well-dressed and clean when attending social events."
+  m_text: 'Combed and washed
+
+    shall the wise man go,
+
+    And a meal at mom shall
+    take;
+
+    For unknown it is
+
+    where at eve he may be;
+
+    It is ill thy
+    luck to lose
+
+
+    - Hnikar, Reginsmal (verse 25)'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 580b894643e68d74199b48180027338a, type: 2}
   m_sharedMaterial: {fileID: -3899448264815451229, guid: 580b894643e68d74199b48180027338a, type: 2}
@@ -1740,3 +1850,4 @@ SceneRoots:
   - {fileID: 675401529}
   - {fileID: 1083984257}
   - {fileID: 1603615049}
+  - {fileID: 106624365}

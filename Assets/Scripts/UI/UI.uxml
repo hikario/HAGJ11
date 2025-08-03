@@ -1,0 +1,14 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/Scripts/UI/Clothing.uss?fileID=7433441132597879392&amp;guid=62cf2983a8ef1b74cac68c12653863a6&amp;type=3#Clothing" />
+    <ui:VisualElement style="flex-grow: 1; flex-direction: row;">
+        <ui:ScrollView style="width: 20%; -unity-font-definition: url(&quot;project://database/Assets/Art/Fonts/Nordic%20Chance.ttf?fileID=12800000&amp;guid=373f75c7b66b4034ebfeae5971234e48&amp;type=3#Nordic Chance&quot;); font-size: 26px;">
+            <ui:ListView show-foldout-header="true" allow-add="false" allow-remove="false" header-title="Tops" show-bound-collection-size="false" name="Tops" style="flex-grow: 1;" />
+            <ui:ListView show-foldout-header="true" allow-add="false" allow-remove="false" header-title="Bottoms" show-bound-collection-size="false" name="Bottoms" style="flex-grow: 1;" />
+            <ui:ListView show-foldout-header="true" allow-add="false" allow-remove="false" header-title="Footwear" show-bound-collection-size="false" name="Footwear" style="flex-grow: 1;" />
+            <ui:ListView show-foldout-header="true" allow-add="false" allow-remove="false" header-title="Hairs" show-bound-collection-size="false" name="Hairs" style="flex-grow: 1;" />
+            <ui:ListView show-foldout-header="true" allow-add="false" allow-remove="false" header-title="Beards" show-bound-collection-size="false" name="Beards" style="flex-grow: 1;" />
+        </ui:ScrollView>
+        <ui:VisualElement style="flex-grow: 1;" />
+        <ui:Button text="Confirm Selections" name="ConfirmButton" style="bottom: auto; top: 85%; flex-direction: row-reverse; flex-shrink: 1; width: 20%; right: 5%; height: 5%; -unity-font-definition: url(&quot;project://database/Assets/Art/Fonts/Nordic%20Chance.ttf?fileID=12800000&amp;guid=373f75c7b66b4034ebfeae5971234e48&amp;type=3#Nordic Chance&quot;); font-size: 26px;" />
+    </ui:VisualElement>
+</ui:UXML>

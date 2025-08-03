@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 464680117}
   - component: {fileID: 464680116}
   - component: {fileID: 464680115}
+  - component: {fileID: 464680118}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -238,6 +239,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 464680118}
+        m_TargetAssemblyTypeName: DestroyNonDestroyObjects, Assembly-CSharp
+        m_MethodName: Cleanup
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &464680116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -276,6 +289,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 464680113}
   m_CullTransparentMesh: 1
+--- !u!114 &464680118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 464680113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b9312e8a6b1e964f8be2a60502debaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &596923798
 GameObject:
   m_ObjectHideFlags: 0

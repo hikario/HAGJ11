@@ -1,0 +1,6 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement focusable="false" style="flex-grow: 1; align-self: stretch; align-content: auto; align-items: center;">
+        <ui:Image name="ImageTile" style="flex-grow: 0; background-color: rgb(255, 255, 255); width: 128px; height: 128px;" />
+        <ui:Label name="NameSelector" style="-unity-font-definition: url(&quot;project://database/Assets/Art/Fonts/Nordic%20Chance.ttf?fileID=12800000&amp;guid=373f75c7b66b4034ebfeae5971234e48&amp;type=3#Nordic Chance&quot;); font-size: 22px;" />
+    </ui:VisualElement>
+</ui:UXML>

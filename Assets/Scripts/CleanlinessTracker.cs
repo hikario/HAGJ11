@@ -76,7 +76,6 @@ public class CleanlinessTracker : MonoBehaviour
         {
             hairColorHolder = hch.GetComponent<HairColorHolder>();
             currentHairColor = hairColorHolder.storedHairColor;
-            soapMax = hairColorHolder.storedDirtAmt;
         }
     }
 
