@@ -9,25 +9,32 @@ public class UIBacking
     ListView m_TopsList;
     ListView m_BottomsList;
     ListView m_FootwearList;
-    ListView m_HatsList;
+    ListView m_HairsList;
+    ListView m_BeardsList;
 
     Button m_Button;
+
+    GameStateManager GSM; 
 
     bool topSelected;
     bool bottomSelected;
     bool footwearSelected;
-    bool hatSelected;
+    bool hairSelected;
+    bool beardSelected;
 
-    public void InitializeClothingList(VisualElement root, VisualTreeAsset clothingTemplate)//, Wardrobe wardrobe)
+    public void InitializeClothingList(VisualElement root, VisualTreeAsset clothingTemplate, GameStateManager gsm)
     {
         Wardrobe wardrobe = LoadWardrobeFromJSONFile();
+
+        GSM = gsm;
 
         m_ClothingTemplate = clothingTemplate;
 
         m_TopsList = root.Q<ListView>("Tops");
         m_BottomsList = root.Q<ListView>("Bottoms");
         m_FootwearList = root.Q<ListView>("Footwear");
-        m_HatsList = root.Q<ListView>("Hats");
+        m_HairsList = root.Q<ListView>("Hairs");
+        m_BeardsList = root.Q<ListView>("Beards");
 
         m_Button = root.Q<Button>("ConfirmButton");
 
@@ -36,17 +43,20 @@ public class UIBacking
         FillTopsList(wardrobe.tops);
         FillBottomsList(wardrobe.bottoms);
         FillFootwearList(wardrobe.footwear);
-        FillHatsList(wardrobe.hats);
+        FillHairsList(wardrobe.hairs);
+        FillBeardsList(wardrobe.beards);
 
         m_TopsList.selectionChanged += OnTopSelected;
         m_BottomsList.selectionChanged += OnBottomSelected;
         m_FootwearList.selectionChanged += OnFootwearSelected;
-        m_HatsList.selectionChanged += OnHatSelected;
+        m_HairsList.selectionChanged += OnHairSelected;
+        m_BeardsList.selectionChanged += OnBeardSelected;
 
         topSelected = false;
         bottomSelected = false;
         footwearSelected = false;
-        hatSelected = false;
+        hairSelected = false;
+        beardSelected = false;
 
         m_Button.SetEnabled(false);
     }
@@ -56,14 +66,15 @@ public class UIBacking
         m_TopsList.selectionChanged -= OnTopSelected;
         m_BottomsList.selectionChanged -= OnBottomSelected;
         m_FootwearList.selectionChanged -= OnFootwearSelected;
-        m_HatsList.selectionChanged -= OnHatSelected;
+        m_HairsList.selectionChanged -= OnHairSelected;
+        m_BeardsList.selectionChanged -= OnBeardSelected;
 
         m_Button.UnregisterCallback<ClickEvent>(OnClickCallback);
     }
 
     void OnClickCallback(ClickEvent evt)
     {
-        GameStateManager.onSumButtonClick.Invoke();
+        GSM.onSumButtonClick.Invoke();
     }
 
     void FillClothingList(ListView listV, List<ClothingObject> clothingList)
@@ -110,9 +121,14 @@ public class UIBacking
         FillClothingList(m_FootwearList, clothingList);
     }
 
-    void FillHatsList(List<ClothingObject> clothingList)
+    void FillHairsList(List<ClothingObject> clothingList)
     {
-        FillClothingList(m_HatsList, clothingList);
+        FillClothingList(m_HairsList, clothingList);
+    }
+
+    void FillBeardsList(List<ClothingObject> clothingList)
+    {
+        FillClothingList(m_BeardsList, clothingList);
     }
 
 
@@ -128,7 +144,7 @@ public class UIBacking
         }
 
         topSelected = true;
-        GameStateManager.onTopChange.Invoke(selectedClothing);
+        GSM.onTopChange.Invoke(selectedClothing);
 
         ControlConfirmationButton();
     }
@@ -146,7 +162,7 @@ public class UIBacking
         }
 
         bottomSelected = true;
-        GameStateManager.onBottomChange.Invoke(selectedClothing);
+        GSM.onBottomChange.Invoke(selectedClothing);
 
         ControlConfirmationButton();
 
@@ -165,25 +181,43 @@ public class UIBacking
         }
 
         footwearSelected = true;
-        GameStateManager.onFootwearChange.Invoke(selectedClothing);
+        GSM.onFootwearChange.Invoke(selectedClothing);
 
         ControlConfirmationButton();
     }
 
-    void OnHatSelected(IEnumerable<object> selectedItems)
+    void OnHairSelected(IEnumerable<object> selectedItems)
     {
-        var selectedClothing = m_HatsList.selectedItem as ClothingObject;
+        var selectedClothing = m_HairsList.selectedItem as ClothingObject;
 
         if (selectedClothing == null)
         {
-            hatSelected = false;
+            hairSelected = false;
             ControlConfirmationButton();
 
             return;
         }
 
-        hatSelected = true;
-        GameStateManager.onHatChange.Invoke(selectedClothing);
+        hairSelected = true;
+        GSM.onHairChange.Invoke(selectedClothing);
+
+        ControlConfirmationButton();
+    }
+
+    void OnBeardSelected(IEnumerable<object> selectedItems)
+    {
+        var selectedClothing = m_BeardsList.selectedItem as ClothingObject;
+
+        if (selectedClothing == null)
+        {
+            beardSelected = false;
+            ControlConfirmationButton();
+
+            return;
+        }
+
+        beardSelected = true;
+        GSM.onBeardChange.Invoke(selectedClothing);
 
         ControlConfirmationButton();
     }
@@ -203,7 +237,7 @@ public class UIBacking
 
     void ControlConfirmationButton()
     {
-        if(topSelected && bottomSelected && footwearSelected && hatSelected)
+        if(topSelected && bottomSelected && footwearSelected)
         {
             m_Button.SetEnabled(true);
         }

@@ -14,12 +14,10 @@ public class MainView : MonoBehaviour
     {
         var uiDoc = GetComponent<UIDocument>();
 
-        // Debug.Log(LoadWardrobeFromJSONFile());
-        // LoadClothingFromJSONFile();
-
         var uiBacker = new UIBacking();
-        // uiBacker.InitializeClothingList(uiDoc.rootVisualElement, m_ClothingTemplate, wardrobe);
-        uiBacker.InitializeClothingList(uiDoc.rootVisualElement, m_ClothingTemplate);
+
+        GameStateManager gsm = GameObject.Find("EventSystem").GetComponent<GameStateManager>();
+        uiBacker.InitializeClothingList(uiDoc.rootVisualElement, m_ClothingTemplate, gsm);
     }
 
 

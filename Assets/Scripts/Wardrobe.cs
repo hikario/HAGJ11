@@ -9,6 +9,7 @@ public class Wardrobe
 {
     public List<ClothingObject> tops;
     public List<ClothingObject> bottoms;
-    public List<ClothingObject> hats;
+    public List<ClothingObject> hairs;
     public List<ClothingObject> footwear;
+    public List<ClothingObject> beards;
 }

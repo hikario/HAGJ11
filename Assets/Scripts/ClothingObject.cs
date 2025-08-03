@@ -23,7 +23,7 @@ public class ClothingObject
 [System.Serializable]
 public class Points
 {
-    public int cool;
-    public int dark;
-    public int fancy;
+    public int historical;
+    public int weeb;
+    public int stereotypical;
 }

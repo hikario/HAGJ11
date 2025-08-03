@@ -1,140 +1,183 @@
 {
 	"tops": [
 		{
-			"clothingName": "Shirt",
-			"image": "Clothes/shirt",
+			"clothingName": "Kyrtill",
+			"image": "Icons/LAG_clothes_icon_1_overshirt",
 			"point_allocation": {
-				"cool": 5,
-				"dark": -2,
-				"fancy": -2
+				"historical": 1,
+				"weeb": 0,
+				"stereotypical": 0
 			},
-			"description": "A colorful top, Vikings wore these for reasons."
+			"description": "A complex top, Vikings of all economic levels wore these overtunics. They were often decorated with braid."
 		},
 		{
-			"clothingName": "Shirt2",
-			"image": "Clothes/shirt",
+			"clothingName": "Mascot Shirt",
+			"image": "Icons/LAG_clothes_icon_2_shirt",
 			"point_allocation": {
-				"cool": -2,
-				"dark": 5,
-				"fancy": -2
+				"historical": 0,
+				"weeb": 1,
+				"stereotypical": 0
 			},
-			"description": "An edgy top, Vikings wore these for reasons."
+			"description": "A top with a picture of a singing mascot on it. What led its creators to emblazon this image on it?"
 		},
 		{
-			"clothingName": "Shirt3",
-			"image": "Clothes/shirt",
+			"clothingName": "Pauldron",
+			"image": "Icons/LAG_clothes_icon_3_shirt",
 			"point_allocation": {
-				"cool": -2,
-				"dark": -2,
-				"fancy": 5
+				"historical": 0,
+				"weeb": 0,
+				"stereotypical": 1
 			},
-			"description": "A frilly and foppish top, Vikings wore these for reasons."
-		},
-		{
-			"clothingName": "Shirt4",
-			"image": "Clothes/shirt",
-			"point_allocation": {
-				"cool": 0,
-				"dark": 1,
-				"fancy": 2
-			},
-			"description": "A stylish top, Vikings didn't wear these."
+			"description": "Brave and ferocious in appearance, but there is no record of Vikings using pauldrons with their armor. Likewise, the horned helmet is a fiction of popular culture."
 		}
 	],
 	"bottoms": [
 		{
-			"clothingName": "Pants",
-			"image": "Clothes/pant",
+			"clothingName": "Trousers",
+			"image": "Icons/LAG_clothes_icon_1_pants",
 			"point_allocation": {
-				"cool": 5,
-				"dark": -2,
-				"fancy": -2
+				"historical": 1,
+				"weeb": 0,
+				"stereotypical": 0
 			},
-			"description": "A colorful pair of pants. Vikings wore these for reasons."
+			"description": "Loose fitting pants held up by a drawstring. Vikings considered tight fitting clothes to be showy and fashionable rather than functional."
 		},
 		{
-			"clothingName": "Pants2",
-			"image": "Clothes/pant",
+			"clothingName": "Sweatpants",
+			"image": "Icons/LAG_clothes_icon_2_pants",
 			"point_allocation": {
-				"cool": -2,
-				"dark": -2,
-				"fancy": 5
+				"historical": 0,
+				"weeb": 1,
+				"stereotypical": 0
 			},
-			"description": "An edgy pair of pants. Vikings wore these for reasons."
+			"description": "Loose fitting pants made of a more modern stretchable fabric. They hold less social cache than trousers however."
 		},
 		{
-			"clothingName": "Pants3",
-			"image": "Clothes/pant",
+			"clothingName": "Pteruges",
+			"image": "Icons/LAG_clothes_icon_3_pants",
 			"point_allocation": {
-				"cool": -2,
-				"dark": 5,
-				"fancy": -2
+				"historical": 0,
+				"weeb": 0,
+				"stereotypical": 1
 			},
-			"description": "A frilly and foppish pair of pants. Vikings wore these for reasons."
-		},
-		{
-			"clothingName": "Pants4",
-			"image": "Clothes/pant",
-			"point_allocation": {
-				"cool": 2,
-				"dark": 1,
-				"fancy": 0
-			},
-			"description": "A stylish pair of pants. Vikings didn't wear these."
+			"description": "Leather strips meant as protective gear around the waist. Not something the Vikings used."
 		}
 	],
-	"hats": [
+	"hairs": [
 		{
-			"clothingName": "Hat",
-			"image": "Clothes/hat",
+			"clothingName": "Suebian Knot",
+			"image": "Icons/LAG_hair_1_icon",
 			"point_allocation": {
-				"cool": 5,
-				"dark": -2,
-				"fancy": -2
+				"historical": 5,
+				"weeb": -2,
+				"stereotypical": -2
 			},
 			"description": "A colorful hat, Vikings wore these for reasons."
 		},
 		{
-			"clothingName": "Hat2",
-			"image": "Clothes/hat",
+			"clothingName": "Long Fringe",
+			"image": "Icons/LAG_hair_2_icon",
 			"point_allocation": {
-				"cool": -2,
-				"dark": 5,
-				"fancy": -2
+				"historical": -2,
+				"weeb": 5,
+				"stereotypical": -2
 			},
 			"description": "An edgy hat, Vikings wore these for reasons."
 		},
 		{
-			"clothingName": "Hat3",
-			"image": "Clothes/hat",
+			"clothingName": "Fringe",
+			"image": "Icons/LAG_hair_3_icon",
 			"point_allocation": {
-				"cool": -2,
-				"dark": -2,
-				"fancy": 5
+				"historical": -2,
+				"weeb": -2,
+				"stereotypical": 5
 			},
 			"description": "A frilly and foppish hat, Vikings wore these for reasons."
 		},
 		{
-			"clothingName": "Hat4",
-			"image": "Clothes/hat",
+			"clothingName": "Bowl Cut",
+			"image": "Icons/LAG_hair_4_icon",
 			"point_allocation": {
-				"cool": 2,
-				"dark": 1,
-				"fancy": 2
+				"historical": 2,
+				"weeb": 1,
+				"stereotypical": 2
 			},
 			"description": "A stylish hat, Vikings didn't wear these."
 		}
 	],
 	"footwear": [
 		{
-			"clothingName": "Shoes",
-			"image": "Clothes/shoes",
+			"clothingName": "Leather Shoes",
+			"image": "Icons/LAG_clothes_icon_1_shoes",
 			"point_allocation": {
-				"cool": 5,
-				"dark": 0,
-				"fancy": 0
+				"historical": 1,
+				"weeb": 0,
+				"stereotypical": 0
+			},
+			"description": "A simple pair of turnshoe styled shoes. They wore out quickly and are very common in Viking trash heaps."
+		},
+		{
+			"clothingName": "Flip-Flops",
+			"image": "Icons/LAG_clothes_icon_2_shoes",
+			"point_allocation": {
+				"historical": 0,
+				"weeb": 1,
+				"stereotypical": 0
+			},
+			"description": "Sturdy yet cheaply made sandals, these are the mark of a truely dedicated fan."
+		},
+		{
+			"clothingName": "Hunting Boots",
+			"image": "Icons/LAG_clothes_icon_3_shoes",
+			"point_allocation": {
+				"historical": 0,
+				"weeb": 0,
+				"stereotypical": 1
+			},
+			"description": "While the Vikings did have leather boots in some areas, these are simply too high to be of practical use."
+		}
+	],
+	"beards": [
+		{
+			"clothingName": "Forked",
+			"image": "Icons/LAG_beard_1_icon",
+			"point_allocation": {
+				"historical": 5,
+				"weeb": 0,
+				"stereotypical": 0
+			},
+			"description": "A sensible pair of shoes. Vikings liked comfortable footwear."
+		},
+		{
+			"clothingName": "Mustache",
+			"image": "Icons/LAG_beard_2_icon",
+			"point_allocation": {
+				"historical": 5,
+				"weeb": 0,
+				"stereotypical": 0
+			},
+			"description": "A sensible pair of shoes. Vikings liked comfortable footwear."
+		},
+		{
+			"clothingName": "Braided",
+			"image": "Icons/LAG_beard_3_icon",
+			"point_allocation": {
+				"historical": 5,
+				"weeb": 0,
+				"stereotypical": 0
+			},
+			"description": "A sensible pair of shoes. Vikings liked comfortable footwear."
+		},
+		{
+			"clothingName": "Full",
+			"image": "Icons/LAG_beard_4_icon",
+			"point_allocation": {
+				"historical": 5,
+				"weeb": 0,
+				"stereotypical": 0
 			},
 			"description": "A sensible pair of shoes. Vikings liked comfortable footwear."
 		}
 	]
+
 }
